@@ -1,0 +1,344 @@
+\documentclass[letterpaper, 10 pt, conference]{ieeeconf}  % Comment this line out if you need a4paper
+%\documentclass[a4paper, 10pt, conference]{ieeeconf}      % Use this line for a4 paper
+\IEEEoverridecommandlockouts                              % This command is only needed if 
+\overrideIEEEmargins                                      % Needed to meet printer requirements.
+
+%In case you encounter the following error:
+%Error 1010 The PDF file may be corrupt (unable to open PDF file) OR
+%Error 1000 An error occurred while parsing a contents stream. Unable to analyze the PDF file.
+%This is a known problem with pdfLaTeX conversion filter. The file cannot be opened with acrobat reader
+%Please use one of the alternatives below to circumvent this error by uncommenting one or the other
+%\pdfobjcompresslevel=0
+%\pdfminorversion=4
+
+% See the \addtolength command later in the file to balance the column lengths
+% on the last page of the document
+
+% The following packages can be found on http:\\www.ctan.org
+\usepackage{graphics} % for pdf, bitmapped graphics files
+\usepackage{pgf,lmodern}
+%\usepackage{epsfig} % for postscript graphics files
+%\usepackage{mathptmx} % assumes new font selection scheme installed
+%\usepackage{times} % assumes new font selection scheme installed
+\usepackage{amsmath} % assumes amsmath package installed
+\usepackage{amssymb}  % assumes amsmath package installed
+\def\mathdefault#1{#1}
+\title{\LARGE \bf
+Using a Neural Network Trained only on Integer Order Systems to Identify
+Fractional Order Dynamics}
+
+
+\author{Bill Goodwine$^{1}$ and Tan Chen$^{2}$% <-this % stops a space
+\thanks{$^{1}$Bill Goodwine is with the Department of Aerospace \& Mechanical
+  Engineering, University of Notre Dame, Notre Dame, IN 46556, USA
+{\tt\small billgoodwine@nd.edu}}%
+\thanks{$^{2}$Tan Chen is with the Department of Electrical and Computer
+Engineering, Michigan Technological University, Houghton, MI 49931, USA
+{\tt\small tanchen@mtu.edu}}
+}
+\begin{document}
+\maketitle
+\thispagestyle{empty}
+\pagestyle{empty}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{abstract}
+
+  This paper presents a standard type neural network that identifies the order
+  of the dynamics of a unit step response. The system is trained on only first
+  and second order systems, yet identifies fractional order responses with a
+  fairly high degree of accuracy. The details of the structure of the neural
+  network, the training method and the training sets,  as well as statistics
+  describing the accuracy of the fractional predictions are presented.  This
+  demonstrates the potential for practicing engineers to use similar machine
+  learning tools trained on ``standard'' systems with the ability to distinguish
+  when features such as fractional order dynamics are significant and warrant
+  deeper consideration for the design or control of such a system. 
+
+\end{abstract}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{INTRODUCTION}
+
+  Fractional calculus and fractional order dynamics are increasingly important
+  in modern engineered systems. Unlike integer order derivatives, fractional
+  order derivatives, and hence the dynamics that depend on them, are
+  \emph{nonlocal}. As such, many modern, large scale engineered systems may
+  exhibit fractional order dynamics and responses. In instances where
+  significant fractional order dynamics are present, control algorithms which
+  directly address the fractional nature of the system may be superior.
+  Therefore, tools to readily identify if significant fractional order dymancs
+  are present are needed.
+
+  Add literature review for fractional calculus and machine learning.
+
+  \section{Neural Network and Training}
+
+  The neural network presented in this paper is illustrated in
+  Figure~\ref{fig:thennet}.  The input to the network is the unit step response
+  of a linear system in the time range of $0 \leq t \leq 10$ discretized into
+  time steps of $\Delta t = 0.1$ [s], which gives 101 input nodes. These are fed
+  to a first hidden layer with 64 nodes, a second hidden layer with 16 nodes, a
+  third hidden layer of 16 nodes and a single output node. Each hidden layer has
+  the ReLU() activation function and bias weights. 
+
+  \begin{figure}
+  \centering
+  \includegraphics[width=3.5in]{viz.png}
+  \caption{The neural network.}
+  \label{fig:thennet}
+  \end{figure}
+
+  This network is not trained as a classifier because we want it to be able to
+  generalize first and second order systems to fractional orders between them.
+  The network was implemented in python using the torch library and
+  pytorch\_lightning tools. The loss function is the mean squared error loss
+  function,\texttt{mse\_loss()}, and the optimization method adopted was Adam
+  optimizer, \texttt{torch.optim.Adam()} with a learning rate of $0.001$. A
+  branch of our github repositiry that shoudl repeatably replicate the results
+  presented in this paper is at ZZZZZZ.
+
+  An individual element of the training set was the step response for a first or
+  second order system. The manner in which they were generated was:
+
+  \begin{itemize}
+
+    \item Select a value from a uniform random distribution, and if the value is
+    less than 0.5, then the step response will be for a second order system, and
+    if not, then it will be for a first order system.
+
+    \item Select two numbers, $c_1$ and $c_2$ from a uniform distribution with
+    values between 0.01 and 4.
+
+    \begin{itemize}
+
+      \item If the response is for a first order system, then the transfer
+      function is
+      \[
+        G(s) = \frac{c_2}{c_1 s + c_2}.
+      \]
+
+      \item If the response is for a second order system, then the selected
+      transfer function is
+      \[
+        G(s) = \frac{c_2}{c_1 s^2 + c_2}.
+      \]
+
+    \end{itemize}
+
+    \item The unit step response for the transfer function is generated using
+    the \texttt{control.step\_response()} function from the python control system
+    library. It is sampled every 0.1 second so that the length of the response
+    vector is 101.
+
+    \item Using this method we generate a set of 100,000 first or second order
+    step responses with approximately the same number of first and second order
+    responses.
+
+    \item The training set is split into three subsets: 60,000 training
+    elements, 20,000 validation elements and 20,000 testing elements.
+
+    \item For training, the training set is shuffled at the beginning of each
+    epoch and the optimization method is applied to change the weights in the
+    network.
+
+    \item At the end of the epoch, the network is run on the validation set to
+    compute an error for data points the network was not trained on. Evidence of
+    overtraining would be if the validation set error decreases and then
+    increases.
+
+    \item At the end of all the training, the error for the testing set is
+    computed.
+
+  \end{itemize}
+
+ 
+Figure~\ref{fig:epochs} illustrates the error on the validation set for 10
+training runs for the network versus epoch. It appears that if the validation
+error increases, it tends to start to do so around 1000 epochs; otherwise it
+tends to stop changing around 1000 epochs (there seems to be one exception). As
+such, we will fix the number of training epochs at 1000.
+
+\begin{figure}
+\centering
+\input{overtrain.pgf}
+\vspace*{-5pt}
+\caption{Neural network output error on validation (not training) set verus
+training epoch.}
+\label{fig:epochs}
+\end{figure}
+
+
+\section{Using the Integer Trained Network on Fractional Order Step Responses}
+
+some text
+
+\begin{figure}
+\centering
+\input{predicted.pgf}
+\vspace*{-5pt}
+\caption{Comparison of actual fractional orders and predicted orders.}
+\label{fig:accuracy}
+\end{figure}
+
+more text
+
+\subsection{Selecting a Template (Heading 2)}
+
+First, confirm that you have the correct template for your paper size. This template has been tailored for output on the US-letter paper size. 
+It may be used for A4 paper size if the paper size setting is suitably modified.
+\subsection{Maintaining the Integrity of the Specifications}
+
+The template is used to format your paper and style the text. All margins, column widths, line spaces, and text fonts are prescribed; please do not alter them. You may note peculiarities. For example, the head margin in this template measures proportionately more than is customary. This measurement and others are deliberate, using specifications that anticipate your paper as one part of the entire proceedings, and not as an independent document. Please do not revise any of the current designations
+
+\section{MATH}
+
+Before you begin to format your paper, first write and save the content as a separate text file. Keep your text and graphic files separate until after the text has been formatted and styled. Do not use hard tabs, and limit use of hard returns to only one return at the end of a paragraph. Do not add any kind of pagination anywhere in the paper. Do not number text heads-the template will do that for you.
+
+Finally, complete content and organizational editing before formatting. Please take note of the following items when proofreading spelling and grammar:
+
+\subsection{Abbreviations and Acronyms} Define abbreviations and acronyms the first time they are used in the text, even after they have been defined in the abstract. Abbreviations such as IEEE, SI, MKS, CGS, sc, dc, and rms do not have to be defined. Do not use abbreviations in the title or heads unless they are unavoidable.
+
+\subsection{Units}
+
+\begin{itemize}
+
+\item Use either SI (MKS) or CGS as primary units. (SI units are encouraged.) English units may be used as secondary units (in parentheses). An exception would be the use of English units as identifiers in trade, such as 3.5-inch disk drive.
+\item Avoid combining SI and CGS units, such as current in amperes and magnetic field in oersteds. This often leads to confusion because equations do not balance dimensionally. If you must use mixed units, clearly state the units for each quantity that you use in an equation.
+\end{itemize}
+
+
+\subsection{Equations}
+
+The equations are an exception to the prescribed specifications of this template. You will need to determine whether or not your equation should be typed using either the Times New Roman or the Symbol font (please no other font). To create multileveled equations, it may be necessary to treat the equation as a graphic and insert it into the text after your paper is styled. Number equations consecutively. Equation numbers, within parentheses, are to position flush right, as in (1), using a right tab stop. To make your equations more compact, you may use the solidus ( / ), the exp function, or appropriate exponents. Italicize Roman symbols for quantities and variables, but not Greek symbols. Use a long dash rather than a hyphen for a minus sign. Punctuate equations with commas or periods when they are part of a sentence, as in
+
+$$
+\alpha + \beta = \chi \eqno{(1)}
+$$
+
+Note that the equation is centered using a center tab stop. Be sure that the symbols in your equation have been defined before or immediately following the equation. 
+
+\subsection{Some Common Mistakes}
+\begin{itemize}
+
+
+\item The word data is plural, not singular.
+\item The subscript for the permeability of vacuum ?0, and other common scientific constants, is zero with subscript formatting, not a lowercase letter o.
+\item In American English, commas, semi-/colons, periods, question and exclamation marks are located within quotation marks only when a complete thought or name is cited, such as a title or full quotation. When quotation marks are used, instead of a bold or italic typeface, to highlight a word or phrase, punctuation should appear outside of the quotation marks. A parenthetical phrase or statement at the end of a sentence is punctuated outside of the closing parenthesis (like this). (A parenthetical sentence is punctuated within the parentheses.)
+
+\end{itemize}
+
+
+\section{USING THE TEMPLATE}
+
+Use this sample document as your LaTeX source file to create your document. Save this file as {\bf root.tex}. You have to make sure to use the cls file that came with this distribution. If you use a different style file, you cannot expect to get required margins. Note also that when you are creating your out PDF file, the source file is only part of the equation. {\it Your \TeX\ $\rightarrow$ PDF filter determines the output file size. Even if you make all the specifications to output a letter file in the source - if your filter is set to produce A4, you will only get A4 output. }
+
+It is impossible to account for all possible situation, one would encounter using \TeX. If you are using multiple \TeX\ files you must make sure that the ``MAIN`` source file is called root.tex - this is particularly important if your conference is using PaperPlaza's built in \TeX\ to PDF conversion tool.
+
+\subsection{Headings, etc}
+
+Text heads organize the topics on a relational, hierarchical basis. For example, the paper title is the primary text head because all subsequent material relates and elaborates on this one topic. If there are two or more sub-topics, the next level head (uppercase Roman numerals) should be used and, conversely, if there are not at least two sub-topics, then no subheads should be introduced. 
+
+\subsection{Figures and Tables}
+
+Positioning Figures and Tables: Place figures and tables at the top and bottom of columns. Avoid placing them in the middle of columns. Large figures and tables may span across both columns. Figure captions should be below the figures; table heads should appear above the tables. Insert figures and tables after they are cited in the text. Use the abbreviation Fig. 1, even at the beginning of a sentence.
+
+\begin{table}[h]
+\caption{An Example of a Table}
+\label{table_example}
+\begin{center}
+\begin{tabular}{|c||c|}
+\hline
+One & Two\\
+\hline
+Three & Four\\
+\hline
+\end{tabular}
+\end{center}
+\end{table}
+
+
+   \begin{figure}[thpb]
+      \centering
+      \framebox{\parbox{3in}{We suggest that you use a text box to insert a graphic (which is ideally a 300 dpi TIFF or EPS file, with all fonts embedded) because, in an document, this method is somewhat more stable than directly inserting a picture.
+}}
+      %\includegraphics[scale=1.0]{figurefile}
+      \caption{Inductance of oscillation winding on amorphous
+       magnetic core versus DC bias magnetic field}
+      \label{figurelabel}
+   \end{figure}
+   
+
+Figure Labels: Use 8 point Times New Roman for Figure labels. Use words rather than symbols or abbreviations when writing Figure axis labels to avoid confusing the reader. As an example, write the 
+
+\section{CONCLUSIONS}
+
+A conclusion section is not required. Although a conclusion may review the main points of the paper, do not replicate the abstract as the conclusion. A conclusion might elaborate on the importance of the work or suggest applications and extensions. 
+
+\addtolength{\textheight}{-12cm}   % This command serves to balance the column lengths
+                                  % on the last page of the document manually. It shortens
+                                  % the textheight of the last page by a suitable amount.
+                                  % This command does not take effect until the next page
+                                  % so it should come on the page before the last. Make
+                                  % sure that you do not shorten the textheight too much.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{APPENDIX}
+
+Appendixes should appear before the acknowledgment.
+
+\section*{ACKNOWLEDGMENT}
+
+The preferred spelling of the word acknowledgment i
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+References are important to the reader; therefore, each citation must be complete and correct. If at all possible, references should be commonly available publications.
+
+
+
+\begin{thebibliography}{99}
+
+\bibitem{c1} G. O. Young,
+\bibitem{c2} W.-K. Chen, Linear Networks and Systems (Book style).	Belmont, CA: Wadsworth, 1993, pp. 123135.
+\bibitem{c3} H. Poor, An Introduction to Signal Detection and Estimation.   New York: Springer-Verlag, 1985, ch. 4.
+\bibitem{c4} B. Smith,
+\bibitem{c5} E. H. Miller
+\bibitem{c6} J. Wang,
+\bibitem{c7} C. J. Kaufman, Rocky Mountain Research Lab., Boulder, CO, private communication, May 1995.
+\bibitem{c8} Y. Yorozu, M. Hirano, K. Oka, and Y. Tagawa, Electron spectroscopy studies on magneto-optical media and plastic substrate interfaces(Translation Journals style), IEEE Transl. J. Magn.Jpn., vol. 2, Aug. 1987, pp. 740741 [Dig. 9th Annu. Conf. Magnetics Japan, 1982, p. 301].
+\bibitem{c9} M. Young, The Techincal Writers Handbook.  Mill Valley, CA: University Science, 1989.
+\bibitem{c10} J. U. Duncombe,
+\bibitem{c11} S. Chen, B. Mulgrew, and P. M. Grant, A clustering technique for digital communications channel equalization using radial basis function networks, IEEE Trans. Neural Networks, vol. 4, pp. 570578, July 1993.
+\bibitem{c12} R. W. Lucky,
+\bibitem{c13} S. P. Bingulac
+\bibitem{c14} G. R. Faulhaber,
+\bibitem{c15} W. D. Doyle,
+\bibitem{c16} G. W. Juette and L. E. Zeffanella,
+\bibitem{c17} J. G. Kreifeldt,
+\bibitem{c18} J. Williams,
+\bibitem{c19} N. Kawasaki,
+\bibitem{c20} J. P. Wilkinson,
+
+
+
+
+
+
+\end{thebibliography}
+
+
+
+
+\end{document}
