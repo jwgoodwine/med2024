@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Homebrew) (preloaded format=pdflatex 2023.6.22)  31 JAN 2024 15:20
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Homebrew) (preloaded format=pdflatex 2023.6.22)  31 JAN 2024 16:04
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -679,13 +679,7 @@ LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 3
 (/opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/tex/latex/lm/ts1lmr.f
 d
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-Overfull \hbox (35.45721pt too wide) in paragraph at lines 47--53
-\OT1/lmr/m/n/8 https://www.sciencedirect.com/science/article/pii/S1007570418301
-308 
- []
-
-)
+))
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -727,7 +721,7 @@ s/type1/public/lm/lmsy10.pfb></opt/homebrew/Cellar/texlive/20230313_2/share/tex
 mf-dist/fonts/type1/public/lm/lmsy7.pfb></opt/homebrew/Cellar/texlive/20230313_
 2/share/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></opt/homebrew/Cellar/texli
 ve/20230313_2/share/texmf-dist/fonts/type1/public/lm/lmtt9.pfb>
-Output written on main.pdf (4 pages, 463357 bytes).
+Output written on main.pdf (4 pages, 463240 bytes).
 PDF statistics:
  115 PDF objects out of 1000 (max. 8388607)
  72 compressed objects within 1 object stream
