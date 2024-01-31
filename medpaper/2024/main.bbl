@@ -1,0 +1,120 @@
+\begin{thebibliography}{10}
+\providecommand{\url}[1]{#1}
+\csname url@rmstyle\endcsname
+\providecommand{\newblock}{\relax}
+\providecommand{\bibinfo}[2]{#2}
+\providecommand\BIBentrySTDinterwordspacing{\spaceskip=0pt\relax}
+\providecommand\BIBentryALTinterwordstretchfactor{4}
+\providecommand\BIBentryALTinterwordspacing{\spaceskip=\fontdimen2\font plus
+\BIBentryALTinterwordstretchfactor\fontdimen3\font minus
+  \fontdimen4\font\relax}
+\providecommand\BIBforeignlanguage[2]{{%
+\expandafter\ifx\csname l@#1\endcsname\relax
+\typeout{** WARNING: IEEEtran.bst: No hyphenation pattern has been}%
+\typeout{** loaded for the language `#1'. Using the pattern for}%
+\typeout{** the default language instead.}%
+\else
+\language=\csname l@#1\endcsname
+\fi
+#2}}
+
+\bibitem{fracbook}
+M.~D. Ortigueira, \emph{Fractional Calculus for Scientists and Engineers}, ser.
+  Lecture Notes in Electrical Engineering.\hskip 1em plus 0.5em minus
+  0.4em\relax Netherlands: Springer Netherlands, 2011, vol.~84.
+
+\bibitem{fracbook2}
+K.~Oldham and J.~Spanier, \emph{The Fractional Calculus Theory and Applications
+  of Differentiation and Integration to Arbitrary Order}.\hskip 1em plus 0.5em
+  minus 0.4em\relax Elsevier Science, 1974.
+
+\bibitem{oustaloup}
+A.~Oustaloup, \emph{La d´erivation non enti`ere}.\hskip 1em plus 0.5em minus
+  0.4em\relax Hermes, 1995.
+
+\bibitem{fraccontrol}
+D.~Val\'erio and J.~S. de~Costa, \emph{An Introduction to Fractional
+  Control}.\hskip 1em plus 0.5em minus 0.4em\relax London, United Kingdom:
+  Institution of Engineering and Technology, 2013.
+
+\bibitem{YQChenAcc}
+{Dingyu Xue}, {Chunna Zhao}, and {YangQuan Chen}, ``Fractional order {PID}
+  control of a {DC}-motor with elastic shaft: a case study,'' in \emph{2006
+  American Control Conference}, 2006, pp. 3182--3187.
+
+\bibitem{SUN2018213}
+\BIBentryALTinterwordspacing
+H.~Sun, Y.~Zhang, D.~Baleanu, W.~Chen, and Y.~Chen, ``A new collection of real
+  world applications of fractional calculus in science and engineering,''
+  \emph{Communications in Nonlinear Science and Numerical Simulation}, vol.~64,
+  pp. 213--231, 2018. [Online]. Available:
+  \url{https://www.sciencedirect.com/science/article/pii/S1007570418301308}
+\BIBentrySTDinterwordspacing
+
+\bibitem{goodwinemed2023}
+B.~Goodwine, ``Fractional-order dynamics in large scale control systems,'' in
+  \emph{2023 31st Mediterranean Conference on Control and Automation (MED)},
+  2023, pp. 747--752.
+
+\bibitem{goodwinemmar2023}
+------, ``Factors influencing fractional-order dynamics in large, scale-free
+  robotics swarms,'' in \emph{2023 27th International Conference on Methods and
+  Models in Automation and Robotics (MMAR)}, 2023, pp. 382--387.
+
+\bibitem{Goodwine2014Modeling}
+B.~{Goodwine}, ``Modeling a multi-robot system with fractional-order
+  differential equations,'' in \emph{2014 IEEE International Conference on
+  Robotics and Automation (ICRA)}, 2014, pp. 1763--1768.
+
+\bibitem{Leyden2016Using}
+K.~{Leyden} and B.~{Goodwine}, ``Using fractional-order differential equations
+  for health monitoring of a system of cooperating robots,'' in \emph{2016 IEEE
+  International Conference on Robotics and Automation (ICRA)}, 2016, pp.
+  366--371.
+
+\bibitem{Leyden2019Large}
+\BIBentryALTinterwordspacing
+K.~Leyden, M.~Sen, and B.~Goodwine, ``Large and infinite mass--spring--damper
+  networks,'' \emph{Journal of Dynamic Systems, Measurement, and Control}, vol.
+  141, no.~6, Feb 2019, 061005. [Online]. Available:
+  \url{https://doi.org/10.1115/1.4042466}
+\BIBentrySTDinterwordspacing
+
+\bibitem{bg:xnids2022}
+\BIBentryALTinterwordspacing
+X.~Ni and B.~Goodwine, ``{Frequency Response and Transfer Functions of Large
+  Self-Similar Networks},'' \emph{Journal of Dynamic Systems, Measurement, and
+  Control}, vol. 144, no.~8, 06 2022, 081007. [Online]. Available:
+  \url{https://doi.org/10.1115/1.4054645}
+\BIBentrySTDinterwordspacing
+
+\bibitem{bg:xninonlinear2020}
+------, ``Damage modeling and detection for a tree network using
+  fractional-order calculus,'' \emph{Nonlinear Dynamics}, vol. 101, pp.
+  875--891, 2020.
+
+\bibitem{bg:chenSII2022}
+T.~Chen and B.~Goodwine, ``A symmetric neural network to compute fractional
+  derivatives by training with integer derivatives,'' in \emph{2022 IEEE/SICE
+  International Symposium on System Integration (SII)}, 2022, pp. 291--296.
+
+\bibitem{Machado20111140}
+J.~T. Machado, V.~Kiryakova, and F.~Mainardi, ``Recent history of fractional
+  calculus,'' \emph{Communications in Nonlinear Science and Numerical
+  Simulation}, vol.~16, no.~3, pp. 1140 -- 1153, 2011.
+
+\bibitem{4609961}
+M.~Ortigueira, ``An introduction to the fractional continuous-time linear
+  systems: the 21st century systems,'' \emph{Circuits and Systems Magazine,
+  IEEE}, vol.~8, no.~3, pp. 19--26, 2008.
+
+\bibitem{series/lnee/Ortigueira11}
+M.~D. Ortigueira, \emph{Fractional Calculus for Scientists and Engineers}, ser.
+  Lecture Notes in Electrical Engineering.\hskip 1em plus 0.5em minus
+  0.4em\relax Springer, 2011, vol.~84.
+
+\bibitem{das2011functional}
+S.~Das, \emph{Functional Fractional Calculus}.\hskip 1em plus 0.5em minus
+  0.4em\relax Springer Science \& Business Media, 2011.
+
+\end{thebibliography}
