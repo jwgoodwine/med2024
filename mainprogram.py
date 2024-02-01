@@ -236,7 +236,14 @@ fig = plt.figure(figsize=(8,5))
 for n in range(NN):
   print(n)
   gain = np.random.uniform(5,9)
-  alpha = np.random.uniform(1.01,2)
+  alpha = np.random.uniform(0.75,2.1)
+  if alpha <= 1:
+    Initial = [0]
+  elif alpha > 2:
+    Initial = [0,0,0]
+  else:
+    Initial = [0,0]
+  
   def f(t,u):
     return (1 - u)*gain
 

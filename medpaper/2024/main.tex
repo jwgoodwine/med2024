@@ -3,29 +3,14 @@
 \IEEEoverridecommandlockouts                              % This command is only needed if 
 \overrideIEEEmargins                                      % Needed to meet printer requirements.
 
-%In case you encounter the following error:
-%Error 1010 The PDF file may be corrupt (unable to open PDF file) OR
-%Error 1000 An error occurred while parsing a contents stream. Unable to analyze the PDF file.
-%This is a known problem with pdfLaTeX conversion filter. The file cannot be opened with acrobat reader
-%Please use one of the alternatives below to circumvent this error by uncommenting one or the other
-%\pdfobjcompresslevel=0
-%\pdfminorversion=4
-
-% See the \addtolength command later in the file to balance the column lengths
-% on the last page of the document
-
-% The following packages can be found on http:\\www.ctan.org
 \usepackage{graphics} % for pdf, bitmapped graphics files
 \usepackage{pgf,lmodern}
-%\usepackage{epsfig} % for postscript graphics files
-%\usepackage{mathptmx} % assumes new font selection scheme installed
-%\usepackage{times} % assumes new font selection scheme installed
-\usepackage{amsmath} % assumes amsmath package installed
-\usepackage{amssymb}  % assumes amsmath package installed
+\usepackage{amsmath,amssymb}  % assumes amsmath package installed
 \usepackage{cite}
+\renewcommand{\d}{\mathrm{d}}
 \def\mathdefault#1{#1}
 \title{\LARGE \bf
-Using a Neural Network Trained only on Integer Order Systems to Identify
+Using a Neural Network Trained Only on Integer Order Systems to Identify
 Fractional Order Dynamics}
 
 
@@ -99,15 +84,71 @@ Engineering, Michigan Technological University, Houghton, MI 49931, USA
  \cite{Machado20111140,4609961,series/lnee/Ortigueira11,das2011functional} for
  descriptions and definitions of each.
 
+  \section{Fractional Calculus}
+
+  This section gives a very brief overview of fractional calclulus necessary to
+  implement the methods in this paper and is therefore very incomplete. The
+  interested reader is referred to the references above for a complete
+  exposition.
+
+  The obvious task for fractional calculus to to define derivatives ``in
+  between'' the usual integer order derivatives, \textit{e.g.}, the one half
+  derivative of $x(t)$, Considering the first and second order backwards finite
+  difference equations for $\Delta t \ll 1$
+ \[
+ \frac{\d x}{\d t}\left(t\right) \approx \frac{x(t) - x \left(t - \Delta
+ t\right)}{\Delta t}
+ \]
+ and
+ \[
+    \frac{\d^2 x}{\d t^2}\left(t\right) \approx \frac{x(t) - 2 x \left(t - \Delta
+    t\right) + x(t - 2 \Delta t)}{\left( \Delta t \right)^2}
+ \]
+ which generalizes to
+ \begin{equation}
+  \frac{\d^n x}{\d t^n}(t) \approx \frac{\sum_{i=0}^n \left( -1 \right)^i
+  \left( \frac{n!}{i! \left( n - i \right)!} \right) x ( t - i \Delta t )}{\left( \Delta t
+  \right)^n},
+  \label{eq:finitediff}
+ \end{equation}
+ where the fraction with the factorials in the numerator and denominator is the
+ binomial coefficient. 
+ The only terms in the preceding equation that must be integers are the
+ factorials. Because the gamma function can be considered a generalization of
+ the factorial because $n! = \Gamma(n+1)$ for integer values of $n$, a
+ generalized equation results with
+ \begin{equation}
+    \frac{\d^\alpha x}{d t^\alpha}(t) \approx \frac{\sum_{i=0}^{\lceil
+    \frac{t}{\Delta t} \rceil} \left( -1 \right)^i \left(
+    \frac{\Gamma(\alpha+1)}{i! \Gamma\left( \alpha - i + 1\right)} \right) x ( t
+    - i \Delta t )}{\left( \Delta t \right)^\alpha}.
+    \label{eq:gw}
+ \end{equation}
+  
+  Unlike the sum in Equation~\ref{eq:finitediff} which only ranges from $0$ to
+  $n$ because of the range of the definition of the factorials and hence
+  binomial coefficient, the generalized binomial coefficient in
+  Equation~\ref{eq:gw} is nonzero for all values of $i$ (except when $\alpha$ is
+  an integer), and hence the sum will include many terms spanning all of
+  history. In the controls context assuming zero initial conditions and zero
+  values for all time prior to zero, the sum will span back to $t=0$. This
+  highlights an important distinction between integer order derivatives and
+  fractional order derivatives, which is that the latter are \emph{nonlocal}.
+  The method to compute the fractional step responses that the neural network
+  will identify was computed by a different method than what is expressed in
+  Equation~\ref{eq:gw}, but is similar in spirit.
+  
   \section{Neural Network and Training}
 
   The neural network presented in this paper is illustrated in
-  Figure~\ref{fig:thennet}.  The input to the network is the unit step response
-  of a linear system in the time range of $0 \leq t \leq 10$ discretized into
-  time steps of $\Delta t = 0.1$ [s], which gives 101 input nodes. These are fed
-  to a first hidden layer with 64 nodes, a second hidden layer with 16 nodes, a
-  third hidden layer of 16 nodes and a single output node. Each hidden layer has
-  the ReLU() activation function and bias weights. 
+  Figure~\ref{fig:thennet}. There is an input layer with 101 nodes, a hidden
+  layer with 64 nodes, a subsequent hidden layer with 16 nodes, another hidden
+  layer with 16 nodes, and an output layer with 1 node. Each hidden layer has
+  the ReLU activation function. The values input to the network is the unit step
+  response of a linear system in the time range of $0 \leq t \leq 10$
+  discretized into time steps of $\Delta t = 0.1$ [s], which gives 101 input
+  nodes. The single output of the network is the order of the system that
+  produced the input step response. 
 
   \begin{figure}
   \centering
@@ -116,15 +157,16 @@ Engineering, Michigan Technological University, Houghton, MI 49931, USA
   \label{fig:thennet}
   \end{figure}
 
-  This network is not trained as a classifier because we want it to be able to
-  generalize first and second order systems to fractional orders between them.
   The network was implemented in python using the torch library and
-  pytorch\_lightning tools. The loss function is the mean squared error loss
-  function,\texttt{mse\_loss()}, and the optimization method adopted was Adam
+  pytorch\_lightning tools. This network is not trained as a classifier because
+  we want it to be able to generalize first and second order systems to
+  fractional orders between them, so the loss function is the mean squared error
+  function, \texttt{mse\_loss()}, and the optimization method adopted was Adam
   optimizer, \texttt{torch.optim.Adam()} with a learning rate of $0.001$. A
   branch of our github repositiry that shoudl repeatably replicate the results
   presented in this paper is at ZZZZZZ.
 
+\subsection{Integer Order Training, Validation and Testing Data}
   An individual element of the training set was the step response for a first or
   second order system. The manner in which they were generated was:
 
