@@ -8,57 +8,50 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: references.bib
-You're missing a field name---line 700 of file references.bib
- : 
- : %url = {https://www.sciencedirect.com/science/article/pii/S1007570418301308},
-(Error may have been on previous line)
-I'm skipping whatever remains of this entry
 Database file #2: goodwine.bib
 -- IEEEtran.bst version 1.11 (2003/04/02) by Michael Shell.
 -- http://www.ctan.org/tex-archive/macros/latex/contrib/supported/IEEEtran/
 -- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
-Warning--empty author in SUN2018213
 
 Done.
 You've used 18 entries,
             3975 wiz_defined-function locations,
-            937 strings with 10955 characters,
-and the built_in function-call counts, 11961 in all, are:
-= -- 949
-> -- 203
+            938 strings with 11034 characters,
+and the built_in function-call counts, 12163 in all, are:
+= -- 962
+> -- 223
 < -- 99
-+ -- 123
-- -- 29
-* -- 547
-:= -- 1839
++ -- 132
+- -- 34
+* -- 557
+:= -- 1868
 add.period$ -- 36
 call.type$ -- 18
 change.case$ -- 14
 chr.to.int$ -- 231
-cite$ -- 19
-duplicate$ -- 866
-empty$ -- 1089
-format.name$ -- 38
-if$ -- 2788
+cite$ -- 18
+duplicate$ -- 877
+empty$ -- 1099
+format.name$ -- 44
+if$ -- 2834
 int.to.chr$ -- 0
 int.to.str$ -- 18
-missing$ -- 139
+missing$ -- 144
 newline$ -- 78
-num.names$ -- 17
-pop$ -- 317
+num.names$ -- 18
+pop$ -- 330
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 984
+skip$ -- 996
 stack$ -- 0
 substring$ -- 555
-swap$ -- 678
+swap$ -- 690
 text.length$ -- 22
 text.prefix$ -- 0
 top$ -- 5
 type$ -- 0
-warning$ -- 1
-while$ -- 48
+warning$ -- 0
+while$ -- 49
 width$ -- 20
-write$ -- 188
-(There was 1 error message)
+write$ -- 189

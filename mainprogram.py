@@ -136,10 +136,10 @@ class SimpleModel(LightningModule):
             nn.Flatten(),
             nn.Linear(features, 64),
             nn.ReLU(),
-            nn.Dropout(0.1),
+            #nn.Dropout(0.1),
             nn.Linear(64, 16),
             nn.ReLU(),
-            nn.Dropout(0,1),
+            #nn.Dropout(0.1),
             nn.Linear(16, classes),
         )
         #self.accuracy = MeanSquaredError()
@@ -236,7 +236,8 @@ fig = plt.figure(figsize=(8,5))
 for n in range(NN):
   print(n)
   gain = np.random.uniform(5,9)
-  alpha = np.random.uniform(0.75,2.1)
+  #alpha = np.random.uniform(0.75,2.1)
+  alpha = np.random.uniform(1,2)
   if alpha <= 1:
     Initial = [0]
   elif alpha > 2:
