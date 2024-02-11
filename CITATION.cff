@@ -1,0 +1,24 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: >-
+  Integer trained neural network to identify fractional
+  order dynamics
+message: >-
+  If you use this software, please cite it using the
+  metadata from this file.
+type: software
+authors:
+  - given-names: Bill
+    family-names: Goodwine
+    email: bill@controls.ame.nd.edu
+    affiliation: University of Notre Dame
+  - given-names: Tan
+    family-names: Chen
+    email: tanchen@mtu.edu
+    affiliation: Michigan Technological University
+repository-code: 'https://github.com/jwgoodwine/med2024.git'
+abstract: >-
+  This Med-2024-Paper branch will remain static after paper
+  submission for the 2024 Mediterranean Controls Conference.
