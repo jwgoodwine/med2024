@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Arch Linux) (preloaded format=pdflatex 2024.1.24)  11 FEB 2024 13:48
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Arch Linux) (preloaded format=pdflatex 2024.1.24)  11 FEB 2024 16:23
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -461,7 +461,11 @@ File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 File: l3backend-pdftex.def 2023-01-16 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count287
 \l__pdf_internal_box=\box61
-) (./main.aux)
+) (./main.aux
+
+LaTeX Warning: Label `fig:accuracy' multiply defined.
+
+)
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 25.
@@ -478,8 +482,7 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 25.
 LaTeX Font Info:    ... okay on input line 25.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 25.
 LaTeX Font Info:    ... okay on input line 25.
-
-(/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+ (/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count288
 \scratchdimen=\dimen257
@@ -573,7 +576,10 @@ Overfull \hbox (7.22688pt too wide) in paragraph at lines 15--16
  [][] 
  []
 
-[2 <./viz.png>]
+
+Underfull \vbox (badness 1033) has occurred while \output is active []
+
+ [2 <./viz.png>]
 Underfull \hbox (badness 6125) in paragraph at lines 60--65
 []\OT1/lmr/m/n/10 The unit step re-sponse from 0 to 10 sec-
  []
@@ -584,17 +590,22 @@ Underfull \hbox (badness 5787) in paragraph at lines 29--31
 c-tion from the
  []
 
-(./predicted.pgf)
-Overfull \hbox (7.22688pt too wide) in paragraph at lines 4586--37
+(./fracsteps.pgf)
+Overfull \hbox (7.22688pt too wide) in paragraph at lines 8781--38
  [][] 
  []
 
-) (./main.bbl [3]
+(./predicted.pgf)
+Overfull \hbox (7.22688pt too wide) in paragraph at lines 4510--47
+ [][] 
+ []
+
+) [3] (./main.bbl
 LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 3
 2.
  (/usr/share/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-) [4{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}])
+))
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -606,36 +617,38 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the US letter (8.5in X 11in) paper size.
 
-[5
+[4{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}] (./main.aux)
 
-] (./main.aux) ) 
+LaTeX Warning: There were multiply-defined labels.
+
+ ) 
 Here is how much of TeX's memory you used:
- 11558 strings out of 477985
- 220844 string characters out of 5840058
- 1903388 words of memory out of 5000000
- 31495 multiletter control sequences out of 15000+600000
+ 11564 strings out of 477985
+ 220952 string characters out of 5840058
+ 1921388 words of memory out of 5000000
+ 31498 multiletter control sequences out of 15000+600000
  698452 words of font info for 153 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  72i,12n,76p,445b,440s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/share/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/s
-hare/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf-dist/fonts/t
-ype1/public/lm/lmbx9.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmbxi10.p
-fb></usr/share/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb></usr/share/texmf-d
-ist/fonts/type1/public/lm/lmex10.pfb></usr/share/texmf-dist/fonts/type1/public/
-lm/lmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmmi5.pfb></usr/shar
-e/texmf-dist/fonts/type1/public/lm/lmmi7.pfb></usr/share/texmf-dist/fonts/type1
-/public/lm/lmr10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr12.pfb></u
-sr/share/texmf-dist/fonts/type1/public/lm/lmr5.pfb></usr/share/texmf-dist/fonts
-/type1/public/lm/lmr6.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr7.pfb
-></usr/share/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf-dist/f
-onts/type1/public/lm/lmri10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lm
-ri8.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/share/tex
-mf-dist/fonts/type1/public/lm/lmsy7.pfb></usr/share/texmf-dist/fonts/type1/publ
-ic/lm/lmtt10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmtt9.pfb>
-Output written on main.pdf (5 pages, 471961 bytes).
+</usr/share/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/share/texmf-dis
+t/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/lm
+/lmbx9.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmbxi10.pfb></usr/share
+/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb></usr/share/texmf-dist/fonts/type
+1/public/lm/lmex10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmmi10.pfb>
+</usr/share/texmf-dist/fonts/type1/public/lm/lmmi5.pfb></usr/share/texmf-dist/f
+onts/type1/public/lm/lmmi7.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr
+10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf
+-dist/fonts/type1/public/lm/lmr5.pfb></usr/share/texmf-dist/fonts/type1/public/
+lm/lmr6.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/share/t
+exmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf-dist/fonts/type1/pub
+lic/lm/lmri10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmri8.pfb></usr/
+share/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf-dist/fonts/
+type1/public/lm/lmsy7.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmtt10.p
+fb></usr/share/texmf-dist/fonts/type1/public/lm/lmtt9.pfb>
+Output written on main.pdf (4 pages, 515245 bytes).
 PDF statistics:
- 139 PDF objects out of 1000 (max. 8388607)
- 87 compressed objects within 1 object stream
+ 136 PDF objects out of 1000 (max. 8388607)
+ 85 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  18 words of extra memory for PDF output out of 10000 (max. 10000000)
 

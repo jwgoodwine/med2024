@@ -32,12 +32,25 @@ the \texttt{FODE()} function from the \texttt{numfracpy} library.
 
 \begin{figure}
 \centering
+\input{fracsteps.pgf}
+\vspace*{-5pt}
+\caption{First 100 fractional order step responses generated and used for the
+neural network.}
+\label{fig:accuracy}
+\end{figure}
+
+
+\begin{figure}
+\centering
 \input{predicted.pgf}
 \vspace*{-5pt}
 \caption{Comparison of actual fractional orders and predicted orders.}
 \label{fig:accuracy}
 \end{figure}
 
-more text
-
+Each of the 1000 fractional order step responses was interpolated or sampled
+into time steps of $\Delta t = 0.1$, and those points were applied to the input
+layer of the neural network trained on the integer order data. The results are
+illustrated in Figure~\ref{fig:accuracy}, illustrating an excellent match. The
+mean square error for the data is 0.00121 with $R^2 = 0.9897$. 
 

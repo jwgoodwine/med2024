@@ -114,4 +114,11 @@ M.~D. Ortigueira, \emph{Fractional Calculus for Scientists and Engineers}, ser.
 S.~Das, \emph{Functional Fractional Calculus}.\hskip 1em plus 0.5em minus
   0.4em\relax Springer Science \& Business Media, 2011.
 
+\bibitem{Goodwine_Integer_trained_neural}
+\BIBentryALTinterwordspacing
+B.~Goodwine and T.~Chen, ``{Integer trained neural network to identify
+  fractional order dynamics}.'' [Online]. Available:
+  \url{https://github.com/jwgoodwine/med2024.git}
+\BIBentrySTDinterwordspacing
+
 \end{thebibliography}
