@@ -1,4 +1,5 @@
 import numpy as np
+import random
 from torch.utils.data import Dataset, DataLoader
 import torch
 from torch import nn
@@ -25,6 +26,10 @@ from sklearn import datasets, linear_model
 from sklearn.metrics import mean_squared_error, r2_score
 from torchviz import make_dot
 import collections
+
+# for reproducability, set the random seeds
+torch.manual_seed(1)
+random.seed(1)
 
 # Get cpu, gpu or mps device for training.
 device = (
@@ -59,12 +64,6 @@ for n in range(2*N):
         y, yout = ct.step_response(sys,t)
         solns[n] = yout
         orders[n] = 1
-
-# print how many first and second order responses were generated
-print(f"number of first order transfer functions")
-print((orders < 1.5).sum())
-print(f"number of second order transfer functions")
-print((orders > 1.5).sum())
 
 # convert matricies to the right data type for nnet input and output
 solns = torch.from_numpy(solns).to(torch.float32)
@@ -142,7 +141,6 @@ class SimpleModel(LightningModule):
             #nn.Dropout(0.1),
             nn.Linear(16, classes),
         )
-        #self.accuracy = MeanSquaredError()
 
     def forward(self, x):
         return self.model(x)
@@ -157,12 +155,9 @@ class SimpleModel(LightningModule):
         x, y = batch
         predicted_order = self(x).reshape(-1)
         loss = F.mse_loss(predicted_order, y)
-        #preds = logits.reshape(-1)
-        #self.accuracy(predicted_order, y)
 
         # Calling self.log will surface up scalers for you in TensorBoard
         self.log(f"{print_str}_loss", loss, prog_bar=True)
-        #self.log(f"{print_str}_acc", self.accuracy, prog_bar=True)
         return loss
 
     def test_step(self, batch, batch_idx):
@@ -172,8 +167,7 @@ class SimpleModel(LightningModule):
     def configure_optimizers(self):
         return torch.optim.Adam(self.parameters(), lr=0.001)
 
-    # HERE: We define the 3 Dataloaders, only train needs to be shuffled
-    # This will then directly be usable with Pytorch Lightning to make a super quick model
+    # Define the  Dataloaders
     def train_dataloader(self):
         return DataLoader(self.train_ds,batch_size=BATCH_SIZE,shuffle=True)
 
