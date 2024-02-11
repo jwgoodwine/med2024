@@ -23,14 +23,14 @@
   fractional orders between them, so the loss function is the mean squared error
   function, \texttt{mse\_loss()}, and the optimization method adopted was Adam
   optimizer, \texttt{torch.optim.Adam()} with a learning rate of $0.001$. A
-  branch of our github repository that should repeatably replicate the results
+  branch of our github repositiry that shoudl repeatably replicate the results
   presented in this paper is at \textbf{ZZZZZZ}.
 
 \subsection{Integer Order Training, Validation and Testing Data}
 
   An individual element of the training, validation and training sets is the
-  step response for a first or second order system (not fractional order). The
-  manner in which they are generated is:
+  step response for a first or second order system. The manner in which they
+  are generated is:
 
   \begin{itemize}
 
@@ -57,11 +57,10 @@
 
     \end{itemize}
 
-	\item The unit step response from 0 to 10 seconds for the transfer function
-	  is generated using the \texttt{control.step\_response()} function from the
-	  python control system library. The number of time steps in the response is
-	  determined by the step response function. It is then sampled every 0.1
-	  second so that the length of the response vector is 101.
+    \item The unit step response from 0 to 10 seconds for the transfer function
+    is generated using the \texttt{control.step\_response()} function from the
+    python control system library. It is sampled every 0.1 second so that the
+    length of the response vector is 101.
 
 \end{itemize} 
 
@@ -91,7 +90,7 @@ configuration presented above generally gave the best results.
 \centering
 \input{overtrain.pgf}
 \vspace*{-5pt}
-\caption{Neural network output error on validation (not training) set versus
+\caption{Neural network output error on validation (not training) set verus
 training epoch.}
 \label{fig:epochs}
 \end{figure}

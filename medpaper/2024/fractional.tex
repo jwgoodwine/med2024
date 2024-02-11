@@ -7,7 +7,7 @@
 
   The obvious task for fractional calculus to to define derivatives ``in
   between'' the usual integer order derivatives, \textit{e.g.}, the one half
-  derivative of $x(t)$, Consider the first and second order backwards finite
+  derivative of $x(t)$. Consider the first and second order backwards finite
   difference equations for $\Delta t \ll 1$
  \[
  \frac{\d x}{\d t}\left(t\right) \approx \frac{x(t) - x \left(t - \Delta
@@ -18,8 +18,8 @@
     \frac{\d^2 x}{\d t^2}\left(t\right) \approx \frac{x(t) - 2 x \left(t - \Delta
     t\right) + x(t - 2 \Delta t)}{\left( \Delta t \right)^2}.
  \]
- From these, it is clear that the formula for an arbitrary positive integer
- order derivative is
+ As is well known, from these it is clear that the formula for an arbitrary
+ positive integer order derivative is
  \begin{equation}
   \frac{\d^n x}{\d t^n}(t) \approx \frac{\sum_{i=0}^n \left( -1 \right)^i
   \left( \frac{n!}{i! \left( n - i \right)!} \right) x ( t - i \Delta t )}{\left( \Delta t
@@ -27,11 +27,11 @@
   \label{eq:finitediff}
  \end{equation}
  where the fraction with the factorials in the numerator and denominator is the
- binomial coefficient. 
- The only terms in the preceding equation that must be integers are the
- factorials. Because the gamma function can be considered a generalization of
- the factorial because $n! = \Gamma(n+1)$ for integer values of $n$, a
- generalized equation results with
+ binomial coefficient. Note that the number of terms in the sum is one more than
+ the order of the derivative.  The only terms in Equation~\ref{eq:finitediff}
+ that must be integers are the factorials. Because the gamma function can be
+ considered a generalization of the factorial because $n! = \Gamma(n+1)$ for
+ integer values of $n$, a generalized equation results with
  \begin{equation}
     \frac{\d^\alpha x}{d t^\alpha}(t) \approx \frac{\sum_{i=0}^{\lceil
     \frac{t}{\Delta t} \rceil} \left( -1 \right)^i \left(
@@ -40,15 +40,13 @@
     \label{eq:gw}
  \end{equation}
   
-  Unlike the sum in Equation~\ref{eq:finitediff} which only ranges from $0$ to
-  $n$ because of the range of the definition of the factorials and hence
-  binomial coefficient, the generalized binomial coefficient in
-  Equation~\ref{eq:gw} is nonzero for all values of $i$ (except when $\alpha$ is
-  an integer), and hence the sum will include times spanning all of history. In
-  the controls context assuming zero initial conditions and zero values for all
-  time prior to zero, the sum will span back to $t=0$. This highlights an
-  important distinction between integer order derivatives and fractional order
-  derivatives, which is that the latter are \emph{nonlocal}.  
+  The generalized binomial coefficient in Equation~\ref{eq:gw} is nonzero for
+  all values of $i$ (except when $\alpha$ is an integer), and hence the sum will
+  include times spanning all of history. In the controls context assuming zero
+  initial conditions and zero values for all time prior to zero, the sum will
+  include terms at all time steps between $0$ and the current $t$. This
+  highlights an important distinction between integer order derivatives and
+  fractional order derivatives, which is that the latter are \emph{nonlocal}.  
 
   The method to compute the fractional step responses that the neural network
   will identify was computed by a different method than what is expressed in
@@ -59,8 +57,9 @@
   \begin{align*}
   x^P_{n+1} &= \sum_{j=0}^{m-1} \frac{t^j_{n+1}}{j!}x_0^j + \left( \Delta t
   \right)^\alpha \sum_{j=0}^n b_{j,n+1} f\left( t_j, x_j \right) \\
-  x_{n+1} &=  \sum_{j=0}^{m-1} \frac{t^j_{n+1}}{j!}x_0^j + \sum_{j=0}^n a_{j,n+1}
-  f \left( t_j, x_j \right) + \\ &\  \hspace*{1in} a_{n+1,n+1} f\left( t_{n+1}, x^P_{n+1} \right)
+  x_{n+1} &=  \sum_{j=0}^{m-1} \frac{t^j_{n+1}}{j!}x_0^j + \sum_{j=0}^n \big[ a_{j,n+1}
+  f \left( t_j, x_j \right) + \\ &\  \hspace*{1in} a_{n+1,n+1} f\left( t_{n+1},
+x^P_{n+1} \right) \big]
   \end{align*}
   where
   \[

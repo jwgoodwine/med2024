@@ -31,46 +31,7 @@ Engineering, Michigan Technological University, Houghton, MI 49931, USA
 \input{intro}
 \input{fractional}
 \input{network}
-
-\section{Using the Integer Trained Network on Fractional Order Step Responses}
-
-Now we give a fractional order step response to the trained neural network to
-see if it can generalize the training on first and second order transfer
-functions to fractional order step responses. As indicated above, we use the
-\texttt{numfracpy} python library to numerically compute the fractional order
-step response for time from 0 to 10. The solution is numerically computed with a
-time step of $\Delta t = 0.01$, but the input to the nextwork is 101 nodes, so
-only every 10th element of the numerical solution is used.
-
-We tested the network on 1000 fractional order step responses to transfer
-functions of the form
-\[
-X(s) = \frac{k}{s^\alpha + k} \frac{1}{s},
-\]
-or in the time domain
-\begin{equation}
-\frac{\d^\alpha x}{\d t^\alpha}(t) + k x(t) = k
-\label{eq:fracstep}
-\end{equation}
-with zero initial conditions. 
-
-The 1000 responses were each generated and tested as follows: 
-\begin{itemize}
-\item Randomly select an order between 1 and 2 from a uniform distribution.
-\item Randomly select a $k$ between 5 and 9 from a uniform distribution.
-\item Numerically compute the step response to Equation~\ref{eq:fracstep} using
-the \texttt{FODE()} function from the \texttt{numfracpy} library. 
-\end{itemize}
-
-\begin{figure}
-\centering
-\input{predicted.pgf}
-\vspace*{-5pt}
-\caption{Comparison of actual fractional orders and predicted orders.}
-\label{fig:accuracy}
-\end{figure}
-
-more text
+\input{generalize}
 
 \section{CONCLUSIONS}
 

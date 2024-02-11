@@ -9,7 +9,7 @@
   space. In instances where significant fractional order dynamics are present,
   control algorithms which directly address the fractional nature of the system
   may be superior.  Therefore, tools to readily identify if significant
-  fractional order dynamics are present are needed.
+  fractional order dymancs are present are needed.
 
   There is a vast literature on fractional calculus. Some textbooks include
   \cite{fracbook,fracbook2,oustaloup}.  Fractional-order control is considered
@@ -19,7 +19,7 @@
   calculus and control in science and engineering is \cite{SUN2018213}.
 
 
-  Our main interest are identifying cases where fractional order models may
+  Our main interets are identifying cases where fractional order models may
   provide useful ``reduced order'' models for large scale systems
   \cite{goodwinemed2023,goodwinemmar2023} and for exact models for many large
   scale systems
@@ -39,7 +39,6 @@
  definitions are perhaps the most common examples of fractional derivative
  definitions, and the reader is referred to the references
  \cite{Machado20111140,4609961,series/lnee/Ortigueira11,das2011functional} for
- descriptions and definitions of each. Because of the python library we utilize
- for this paper, the definition used herein is the Caputo fractional derivative. 
+ descriptions and definitions of each.
 
 
