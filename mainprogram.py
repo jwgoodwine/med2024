@@ -11,6 +11,7 @@ from pytorch_lightning import LightningModule, Trainer
 from lightning.pytorch.loggers import TensorBoardLogger
 import control as ct
 import numfracpy as nfr
+import scipy
 import scipy.special as special
 import matplotlib as mpl
 
@@ -285,4 +286,22 @@ plt.xlabel("Input order, $\\alpha$")
 plt.ylabel("Predicted order")
 plt.tight_layout()
 plt.savefig("predicted.pgf",format="pgf")
+
+matcontent = scipy.io.loadmat("ident.mat")
+ts = np.zeros(shape=(1,101))
+dat = matcontent['ident']
+dat = dat.transpose()
+ts[0] = dat[1]
+out = model.forward(torch.from_numpy(ts).to(torch.float32).detach().numpy())
+
+width = 3.5
+height = width*(5**.5-1)/2
+height = 1.1*height
+fig = plt.figure(figsize=(width,height))
+plt.plot(dat)
+plt.xlabel("$t$")
+plt.ylabel("$x(t)$")
+plt.tight_layout()
+plt.savefig("networkresponse.pgf",format="pgf")
+
 
