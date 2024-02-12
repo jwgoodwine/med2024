@@ -298,7 +298,8 @@ width = 3.5
 height = width*(5**.5-1)/2
 height = 1.1*height
 fig = plt.figure(figsize=(width,height))
-plt.plot(dat)
+plt.grid(True)
+plt.plot(dat.T[:,0],dat.T[:,1])
 plt.xlabel("$t$")
 plt.ylabel("$x(t)$")
 plt.tight_layout()
