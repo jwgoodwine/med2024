@@ -1,4 +1,5 @@
-\section{Fractional Calculus}
+\section{FRACTIONAL CALCULUS}
+\label{sec:fractional}
 
   This section gives a very brief overview of only the fractional calclulus
   topics necessary to implement the methods in this paper and is therefore
@@ -18,8 +19,8 @@
     \frac{\d^2 x}{\d t^2}\left(t\right) \approx \frac{x(t) - 2 x \left(t - \Delta
     t\right) + x(t - 2 \Delta t)}{\left( \Delta t \right)^2}.
  \]
- As is well known, from these it is clear that the formula for an arbitrary
- positive integer order derivative is
+ As is well known, from these two equations it is clear that the formula for an
+ arbitrary positive integer order derivative is
  \begin{equation}
   \frac{\d^n x}{\d t^n}(t) \approx \frac{\sum_{i=0}^n \left( -1 \right)^i
   \left( \frac{n!}{i! \left( n - i \right)!} \right) x ( t - i \Delta t )}{\left( \Delta t
@@ -39,14 +40,19 @@
     - i \Delta t )}{\left( \Delta t \right)^\alpha}.
     \label{eq:gw}
  \end{equation}
+ If, instead of $\Delta t \ll 0$ the limit as $\Delta t \rightarrow 0$ is used,
+ this equation becomes the Gr\"unwald-Letnikov derivative (see the references
+ cited in the introduction for a complete exposition). 
   
   The generalized binomial coefficient in Equation~\ref{eq:gw} is nonzero for
-  all values of $i$ (except when $\alpha$ is an integer), and hence the sum will
-  include times spanning all of history. In the controls context assuming zero
-  initial conditions and zero values for all time prior to zero, the sum will
-  include terms at all time steps between $0$ and the current $t$. This
+  all values of $i$ (except when $\alpha$ is an integer), and hence the sum
+  will include times spanning all of history. In the controls context assuming
+  zero initial conditions and zero values for all time prior to zero, the sum
+  will include terms at all time steps between $0$ and the current $t$. This
   highlights an important distinction between integer order derivatives and
-  fractional order derivatives, which is that the latter are \emph{nonlocal}.  
+  fractional order derivatives, which is that the latter are \emph{nonlocal}.
+  It also highlights the fact that computing fractional derivatives is
+  computatuionally expensive compared to integer order derivatives. 
 
   The method to compute the fractional step responses that the neural network
   will identify was computed by a different method than what is expressed in
