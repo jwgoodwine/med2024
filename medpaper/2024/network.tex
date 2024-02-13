@@ -11,14 +11,7 @@
   nodes. The single output of the network is the order of the system that
   produced the input step response. 
 
-  \begin{figure}
-  \centering
-  \includegraphics[width=3.5in]{viz.png}
-  \caption{The neural network.}
-  \label{fig:thennet}
-  \end{figure}
-
-  The network was implemented in python using the \texttt{torch} library and
+The network was implemented in python using the \texttt{torch} library and
   \texttt{pytorch\_lightning} tools. This network is not trained as a classifier
   because we want it to be able to generalize first and second order systems to
   fractional orders between them, so the loss function is the mean squared error
@@ -74,7 +67,7 @@
     the optimization method is applied to change the weights in the network.  At
     the end of the epoch, the network is run on the validation set to compute an
     error for data points the network was not trained on. Evidence of
-    overtraining would be if the validation set error decreases and then
+    over training would be if the validation set error decreases and then
     increases.  At the end of all the training, the error for the testing set is
     computed.
 

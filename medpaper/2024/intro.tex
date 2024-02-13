@@ -1,5 +1,13 @@
 \section{INTRODUCTION}
 
+  \begin{figure}
+  \centering
+  \includegraphics[width=3.5in]{viz.png}
+  \caption{The neural network.}
+  \label{fig:thennet}
+  \end{figure}
+
+
   Fractional calculus and fractional order dynamics are increasingly important
   in modern engineered systems. Unlike integer order derivatives, fractional
   order derivatives, and hence the dynamics that depend on them, are
@@ -42,13 +50,27 @@
  descriptions and definitions of each. Because of the python library we utilize
  for this paper, the definition used herein is the Caputo fractional derivative. 
 
+ Machine learning in general and neural networks in particular have a long
+ history. One of the earliest works related to the feed forward neural network,
+ the type used in this paper, is from 1960 by Rosenblatt \cite{Rosenblatt1960}.
+ In the 1970s, advanced in training by the back propagation method were
+ developed \cite{linnainmaa1} and were further advanced in the 1980s
+ \cite{werbos}.  Additionally in the 1980s theoretical advances such as the
+ universal approximation theorem \cite{hornik1989multilayer} were developed.
+ These practical advances buttressed with theoretical support helped advance the
+ cause for usefulness of artificial neural networks. Of course, the confluence
+ of ubiquitous data and advanced in computer processing power enabled many
+ applications in the beginning of the 21st century has resulted in the rapid
+ deployment throughout many aspects of modern life. 
+ 
+
  The rest of this paper is organized as follows. Section~\ref{sec:fractional}
  provides a limited introduction to fractional calculus, including the concepts
  needed for this paper. Section~\ref{sec:network} presents the details of the
- artifical neural network used and the integer order training data.
+ artificial neural network used and the integer order training data.
  Section~\ref{sec:generalize} presents the results when the neural network is
  used to identify fractional order dynamics. Section~\ref{sec:scalefree}
  further validates the results by applying the network to identify fractional
  order dynamics in a large scale networked system from the literature. Finally,
  Section~\ref{sec:conclusions} presents the conclusions and an outline of
- ongoing and future work.. 
+ ongoing and future work. 

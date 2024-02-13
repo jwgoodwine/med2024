@@ -16,45 +16,45 @@ Database file #2: goodwine.bib
 -- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
 
 Done.
-You've used 19 entries,
+You've used 23 entries,
             3975 wiz_defined-function locations,
-            943 strings with 11235 characters,
-and the built_in function-call counts, 12537 in all, are:
-= -- 987
-> -- 232
-< -- 99
-+ -- 136
-- -- 36
-* -- 572
-:= -- 1932
-add.period$ -- 38
-call.type$ -- 19
-change.case$ -- 15
-chr.to.int$ -- 231
-cite$ -- 19
-duplicate$ -- 909
-empty$ -- 1136
-format.name$ -- 47
-if$ -- 2913
+            973 strings with 11806 characters,
+and the built_in function-call counts, 15819 in all, are:
+= -- 1276
+> -- 289
+< -- 130
++ -- 169
+- -- 44
+* -- 718
+:= -- 2424
+add.period$ -- 47
+call.type$ -- 23
+change.case$ -- 21
+chr.to.int$ -- 300
+cite$ -- 23
+duplicate$ -- 1153
+empty$ -- 1391
+format.name$ -- 57
+if$ -- 3683
 int.to.chr$ -- 0
-int.to.str$ -- 19
-missing$ -- 152
-newline$ -- 83
-num.names$ -- 19
-pop$ -- 358
+int.to.str$ -- 23
+missing$ -- 187
+newline$ -- 95
+num.names$ -- 25
+pop$ -- 427
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 1023
+skip$ -- 1292
 stack$ -- 0
-substring$ -- 556
-swap$ -- 707
-text.length$ -- 22
+substring$ -- 739
+swap$ -- 914
+text.length$ -- 30
 text.prefix$ -- 0
 top$ -- 5
 type$ -- 0
 warning$ -- 0
-while$ -- 50
-width$ -- 21
-write$ -- 198
+while$ -- 67
+width$ -- 25
+write$ -- 239
 (There was 1 warning)

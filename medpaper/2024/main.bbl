@@ -114,6 +114,25 @@ M.~D. Ortigueira, \emph{Fractional Calculus for Scientists and Engineers}, ser.
 S.~Das, \emph{Functional Fractional Calculus}.\hskip 1em plus 0.5em minus
   0.4em\relax Springer Science \& Business Media, 2011.
 
+\bibitem{Rosenblatt1960}
+F.~Rosenblatt, ``Perceptron simulation experiments,'' \emph{Proceedings of the
+  IRE}, vol.~48, no.~3, pp. 301--309, 1960.
+
+\bibitem{linnainmaa1}
+T.~expansion of the accumulated~rounding error, ``Seppo linnainmaa,''
+  \emph{BIT}, p. 146–160, 1976.
+
+\bibitem{werbos}
+P.~J. Werbos, ``Applications of advances in nonlinear sensitivity analysis,''
+  in \emph{System Modeling and Optimization}, R.~F. Drenick and F.~Kozin,
+  Eds.\hskip 1em plus 0.5em minus 0.4em\relax Berlin, Heidelberg: Springer
+  Berlin Heidelberg, 1982, pp. 762--770.
+
+\bibitem{hornik1989multilayer}
+K.~Hornik, M.~Stinchcombe, and H.~White, ``Multilayer feedforward networks are
+  universal approximators,'' \emph{Neural networks}, vol.~2, no.~5, pp.
+  359--366, 1989.
+
 \bibitem{Goodwine_Integer_trained_neural}
 \BIBentryALTinterwordspacing
 B.~Goodwine and T.~Chen, ``{Integer trained neural network to identify

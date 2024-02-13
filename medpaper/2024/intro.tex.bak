@@ -9,7 +9,7 @@
   space. In instances where significant fractional order dynamics are present,
   control algorithms which directly address the fractional nature of the system
   may be superior.  Therefore, tools to readily identify if significant
-  fractional order dymancs are present are needed.
+  fractional order dynamics are present are needed.
 
   There is a vast literature on fractional calculus. Some textbooks include
   \cite{fracbook,fracbook2,oustaloup}.  Fractional-order control is considered
@@ -19,7 +19,7 @@
   calculus and control in science and engineering is \cite{SUN2018213}.
 
 
-  Our main interets are identifying cases where fractional order models may
+  Our main interest are identifying cases where fractional order models may
   provide useful ``reduced order'' models for large scale systems
   \cite{goodwinemed2023,goodwinemmar2023} and for exact models for many large
   scale systems
@@ -39,6 +39,30 @@
  definitions are perhaps the most common examples of fractional derivative
  definitions, and the reader is referred to the references
  \cite{Machado20111140,4609961,series/lnee/Ortigueira11,das2011functional} for
- descriptions and definitions of each.
+ descriptions and definitions of each. Because of the python library we utilize
+ for this paper, the definition used herein is the Caputo fractional derivative. 
 
+ Machine learning in general and neural neworks in particular have a long
+ history. One of the earliest works related to the feedforward neural network,
+ the type used in this paper, is from 1960 by Rosenblatt \cite{Rosenblatt1960}.
+ In the 1970s, advanced in training by the backpropagation method were
+ developed \cite{linnainmaa1} and were further advanced in the 1980s
+ \cite{werbos}.  Additionally in the 1980s theoretical advances such as the
+ universal approximation theorem \cite{hornik1989multilayer} were developed.
+ These practical advances butressed with theoretical support helped advance the
+ cause for usefulness of artifical neural networks. Of course, the confluence
+ of ubuiquitous data and advanced in compter processing power endabled many
+ applications in the beginning of the 21st century has resulted in the rapid
+ deploment throughout many aspects of modern life. 
+ 
 
+ The rest of this paper is organized as follows. Section~\ref{sec:fractional}
+ provides a limited introduction to fractional calculus, including the concepts
+ needed for this paper. Section~\ref{sec:network} presents the details of the
+ artifical neural network used and the integer order training data.
+ Section~\ref{sec:generalize} presents the results when the neural network is
+ used to identify fractional order dynamics. Section~\ref{sec:scalefree}
+ further validates the results by applying the network to identify fractional
+ order dynamics in a large scale networked system from the literature. Finally,
+ Section~\ref{sec:conclusions} presents the conclusions and an outline of
+ ongoing and future work. 
