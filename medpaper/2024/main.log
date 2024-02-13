@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Homebrew) (preloaded format=pdflatex 2023.6.22)  13 FEB 2024 15:22
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Homebrew) (preloaded format=pdflatex 2023.6.22)  13 FEB 2024 16:51
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -691,7 +691,10 @@ Overfull \hbox (7.22688pt too wide) in paragraph at lines 4510--59
  [][] 
  []
 
-) (./scalefree.tex [4]
+) (./scalefree.tex
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [4]
 Package epstopdf Info: Source file: <network.eps>
 (epstopdf)                    date: 2024-02-12 14:26:12
 (epstopdf)                    size: 324686 bytes
@@ -717,7 +720,7 @@ Overfull \hbox (7.22688pt too wide) in paragraph at lines 619--32
  [][] 
  []
 
-) (./main.bbl
+) (./conclusions.tex) (./main.bbl
 LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 3
 2.
 
@@ -745,10 +748,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 11634 strings out of 476025
- 228695 string characters out of 5779036
- 1944388 words of memory out of 5000000
- 31803 multiletter control sequences out of 15000+600000
+ 11640 strings out of 476025
+ 228803 string characters out of 5779036
+ 1945388 words of memory out of 5000000
+ 31806 multiletter control sequences out of 15000+600000
  698452 words of font info for 153 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  72i,12n,76p,445b,440s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -777,7 +780,7 @@ are/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></opt/homebrew/Cellar/texlive/2
 r/texlive/20230313_2/share/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></opt/ho
 mebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/type1/public/lm/lmtt9.p
 fb>
-Output written on main.pdf (6 pages, 919386 bytes).
+Output written on main.pdf (6 pages, 919698 bytes).
 PDF statistics:
  148 PDF objects out of 1000 (max. 8388607)
  90 compressed objects within 1 object stream

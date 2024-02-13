@@ -50,7 +50,7 @@ illustrated in Figure~\ref{fig:accuracy}, illustrating an excellent match. Each
 blue dot in the plot corresponds to one element of the fractional test set.
 Perfect matching would result in the data forming a straight line from the point
 $(1,1)$ to $(2,2)$. The mean square error for the data is 0.00121 with $R^2 =
-0.9897$. 
+0.9897$.
 
 \begin{figure}
 \centering
@@ -60,4 +60,10 @@ $(1,1)$ to $(2,2)$. The mean square error for the data is 0.00121 with $R^2 =
 \label{fig:accuracy}
 \end{figure}
 
-
+Again, we emphasize that the neural network was only trained at 1 and 2, so all
+of the points along the diagonal line between those values can reasonably be
+interpreted as a result of the neural network generalizing the definition of the
+derivative. The largest deviation from perfect generalization is near the two
+endpoints. A speculative, but plausable, explanation of those is that because
+those points are near the training points, the network will tend to over predict
+orders of 1 and 2.
