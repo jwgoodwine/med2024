@@ -133,6 +133,22 @@ K.~Hornik, M.~Stinchcombe, and H.~White, ``Multilayer feedforward networks are
   universal approximators,'' \emph{Neural networks}, vol.~2, no.~5, pp.
   359--366, 1989.
 
+\bibitem{semeraro}
+F.~Semeraro, A.~Griffiths, and A.~Cangelosi, ``Human–robot collaboration and
+  machine learning: A systematic review of recent research. robotics and
+  computer-integrated manufacturing,'' vol.~79, 2023, 102432.
+
+\bibitem{9199280}
+A.~I. Károly, P.~Galambos, J.~Kuti, and I.~J. Rudas, ``Deep learning in
+  robotics: Survey on model structures and training strategies,'' \emph{IEEE
+  Transactions on Systems, Man, and Cybernetics: Systems}, vol.~51, no.~1, pp.
+  266--279, 2021.
+
+\bibitem{bai}
+Q.~Bai, S.~Li, J.~Yang, Q.~Song, Z.~Li, and X.~Zhang, ``Object detection
+  recognition and robot grasping based on machine learning: A survey,''
+  \emph{IEEE Access}, vol.~8, pp. 181\,855--181\,879, 2020.
+
 \bibitem{Goodwine_Integer_trained_neural}
 \BIBentryALTinterwordspacing
 B.~Goodwine and T.~Chen, ``{Integer trained neural network to identify

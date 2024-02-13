@@ -9,6 +9,7 @@ step response for time from 0 to 10. The solution is numerically computed with a
 time step of $\Delta t = 0.01$, but the input to the network is 101 nodes, so
 only every 10th element of the numerical solution is used.
 
+\subsection{Generating the test set}
 We tested the network on 1000 fractional order step responses to transfer
 functions of the form
 \[
@@ -40,6 +41,16 @@ neural network.}
 \label{fig:accuracy}
 \end{figure}
 
+\subsection{Neural network identifying the order of the test set}
+
+Each of the 1000 fractional order step responses was interpolated or sampled
+into time steps of $\Delta t = 0.1$, and those points were applied to the input
+layer of the neural network trained on the integer order data. The results are
+illustrated in Figure~\ref{fig:accuracy}, illustrating an excellent match. Each
+blue dot in the plot corresponds to one element of the fractional test set.
+Perfect matching would result in the data forming a straight line from the point
+$(1,1)$ to $(2,2)$. The mean square error for the data is 0.00121 with $R^2 =
+0.9897$. 
 
 \begin{figure}
 \centering
@@ -49,9 +60,4 @@ neural network.}
 \label{fig:accuracy}
 \end{figure}
 
-Each of the 1000 fractional order step responses was interpolated or sampled
-into time steps of $\Delta t = 0.1$, and those points were applied to the input
-layer of the neural network trained on the integer order data. The results are
-illustrated in Figure~\ref{fig:accuracy}, illustrating an excellent match. The
-mean square error for the data is 0.00121 with $R^2 = 0.9897$. 
 

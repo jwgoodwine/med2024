@@ -11,14 +11,15 @@
   nodes. The single output of the network is the order of the system that
   produced the input step response. 
 
-The network was implemented in python using the \texttt{torch} library and
-  \texttt{pytorch\_lightning} tools. This network is not trained as a classifier
-  because we want it to be able to generalize first and second order systems to
-  fractional orders between them, so the loss function is the mean squared error
-  function, \texttt{mse\_loss()}, and the optimization method adopted was Adam
-  optimizer, \texttt{torch.optim.Adam()} with a learning rate of $0.001$. A
-  branch of our github repository that should repeatably replicate the results
-  presented in this paper is at \cite{Goodwine_Integer_trained_neural}.
+  The network was implemented in python using the \texttt{torch} library and
+  \texttt{pytorch\_lightning} tools. This network is not trained as a pure
+  classifier because we want it to be able to generalize first and second order
+  systems to fractional orders between them, so the loss function is the mean
+  squared error function, \texttt{mse\_loss()}, and the optimization method
+  adopted was Adam optimizer, \texttt{torch.optim.Adam()} with a learning rate
+  of $0.001$. A branch of our github repository that should repeatably replicate
+  the results presented in this paper is at
+  \cite{Goodwine_Integer_trained_neural}.
 
 \subsection{Integer Order Training, Validation and Testing Data}
 
@@ -58,6 +59,8 @@ The network was implemented in python using the \texttt{torch} library and
 	  second so that the length of the response vector is 101.
 
 \end{itemize} 
+
+\subsection{Training method}
 
     Using this method we generate a set of 100,000 first or second order step
     responses with approximately the same number of first and second order

@@ -7,10 +7,16 @@
   complete exposition.
 
   The obvious task for fractional calculus to to define derivatives ``in
-  between'' the usual integer order derivatives, \textit{e.g.}, the one half
-  derivative of $x(t)$. Consider the first and second order backwards finite
-  difference equations for $\Delta t \ll 1$
- \[
+  between'' the usual integer order derivatives, \textit{e.g.}, 
+\[
+x(t) = \frac{\d^0 x}{\d t^0}(t), \quad\frac{\d^{1/2} x}{\d
+t^{1/2}}(t), \quad \frac{\d x}{\d t}(t),  \quad \frac{\d^{5/4} x}{\d
+t^{5/4}}(t), \ldots.
+\]
+  For one approach to generalizing the derivative to real, possibly noninteger,
+  orders, consider the first and second order backwards finite difference
+  equations for $\Delta t \ll 1$
+\[
  \frac{\d x}{\d t}\left(t\right) \approx \frac{x(t) - x \left(t - \Delta
  t\right)}{\Delta t}
  \]
@@ -34,12 +40,14 @@
  considered a generalization of the factorial because $n! = \Gamma(n+1)$ for
  integer values of $n$, a generalized equation results with
  \begin{equation}
-    \frac{\d^\alpha x}{d t^\alpha}(t) \approx \frac{\sum_{i=0}^{\lceil
+    \frac{\d^\alpha x}{\d t^\alpha}(t) \approx \frac{\sum_{i=0}^{\lceil
     \frac{t}{\Delta t} \rceil} \left( -1 \right)^i \left(
     \frac{\Gamma(\alpha+1)}{i! \Gamma\left( \alpha - i + 1\right)} \right) x ( t
-    - i \Delta t )}{\left( \Delta t \right)^\alpha}.
+    - i \Delta t )}{\left( \Delta t \right)^\alpha},
     \label{eq:gw}
  \end{equation}
+ where the symbol for the order of the derivative was changed from $n$ to
+ $\alpha$ to connote that it no longer must be an integer. 
  If, instead of $\Delta t \ll 0$ the limit as $\Delta t \rightarrow 0$ is used,
  this equation becomes the Gr\"unwald-Letnikov derivative (see the references
  cited in the introduction for a complete exposition). 

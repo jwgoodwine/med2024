@@ -1,4 +1,4 @@
-This is BibTeX, Version 0.99d (TeX Live 2021/MacPorts 2021.58693_1)
+This is BibTeX, Version 0.99d (TeX Live 2023/Homebrew)
 Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: main.aux
 The style file: IEEEtran.bst
@@ -14,47 +14,48 @@ Database file #2: goodwine.bib
 -- IEEEtran.bst version 1.11 (2003/04/02) by Michael Shell.
 -- http://www.ctan.org/tex-archive/macros/latex/contrib/supported/IEEEtran/
 -- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
+Warning--empty journal in semeraro
 
 Done.
-You've used 23 entries,
+You've used 26 entries,
             3975 wiz_defined-function locations,
-            973 strings with 11806 characters,
-and the built_in function-call counts, 15819 in all, are:
-= -- 1276
-> -- 289
-< -- 130
-+ -- 169
-- -- 44
-* -- 718
-:= -- 2424
-add.period$ -- 47
-call.type$ -- 23
-change.case$ -- 21
-chr.to.int$ -- 300
-cite$ -- 23
-duplicate$ -- 1153
-empty$ -- 1391
-format.name$ -- 57
-if$ -- 3683
+            990 strings with 12460 characters,
+and the built_in function-call counts, 18507 in all, are:
+= -- 1492
+> -- 364
+< -- 156
++ -- 217
+- -- 63
+* -- 857
+:= -- 2809
+add.period$ -- 53
+call.type$ -- 26
+change.case$ -- 25
+chr.to.int$ -- 360
+cite$ -- 27
+duplicate$ -- 1339
+empty$ -- 1580
+format.name$ -- 73
+if$ -- 4299
 int.to.chr$ -- 0
-int.to.str$ -- 23
-missing$ -- 187
-newline$ -- 95
-num.names$ -- 25
-pop$ -- 427
+int.to.str$ -- 26
+missing$ -- 219
+newline$ -- 104
+num.names$ -- 28
+pop$ -- 497
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 1292
+skip$ -- 1494
 stack$ -- 0
-substring$ -- 739
-swap$ -- 914
-text.length$ -- 30
+substring$ -- 900
+swap$ -- 1081
+text.length$ -- 36
 text.prefix$ -- 0
 top$ -- 5
 type$ -- 0
-warning$ -- 0
-while$ -- 67
-width$ -- 25
-write$ -- 239
-(There was 1 warning)
+warning$ -- 1
+while$ -- 76
+width$ -- 28
+write$ -- 269
+(There were 2 warnings)
