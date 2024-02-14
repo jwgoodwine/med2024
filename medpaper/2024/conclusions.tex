@@ -1,4 +1,12 @@
 \section{CONCLUSIONS}
 \label{sec:conclusions}
 
-These are the conclusions.
+This paper presents a neural network that is trained on integer order step
+responses and predicts with surprising accuracy the order of fractional order
+step responses. Figure~\ref{fig:accuracy} illustrates the accuracy of the
+fractional order predictions with nearly every fractional step input identified
+with an order that places it very close to the exact line that would run from
+the point $(1,1)$ to $(2,2)$. While the network predicts fractional orders
+very well for fractional orders \emph{between} the trained orders of 1 and 2, it
+does a poor job extrapolating outside of the range $[1,2]$, as is illustrated in
+Figure~\ref{fig:extrapolate}. 

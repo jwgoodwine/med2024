@@ -9,7 +9,8 @@
   response of a linear system in the time range of $0 \leq t \leq 10$
   discretized into time steps of $\Delta t = 0.1$ [s], which gives 101 input
   nodes. The single output of the network is the order of the system that
-  produced the input step response. 
+  produced the input step response. There are approximately 7600 parameters in
+  the feedforward neural network. 
 
   The network was implemented in python using the \texttt{torch} library and
   \texttt{pytorch\_lightning} tools. This network is not trained as a pure
@@ -65,14 +66,15 @@
     Using this method we generate a set of 100,000 first or second order step
     responses with approximately the same number of first and second order
     responses. The training set is split into three subsets: 60,000 training
-    elements, 20,000 validation elements and 20,000 testing elements. For
-    training, the training set is shuffled at the beginning of each epoch and
-    the optimization method is applied to change the weights in the network.  At
-    the end of the epoch, the network is run on the validation set to compute an
-    error for data points the network was not trained on. Evidence of
-    over training would be if the validation set error decreases and then
-    increases.  At the end of all the training, the error for the testing set is
-    computed.
+    elements, 20,000 validation elements and 20,000 testing elements. Using a
+    training set of that size corresponds to approximately 8 training points for
+    each parameter in the network. For training, the training set is shuffled at
+    the beginning of each epoch and the optimization method is applied to change
+    the weights in the network.  At the end of the epoch, the network is run on
+    the validation set to compute an error for data points the network was not
+    trained on. Evidence of over training would be if the validation set error
+    decreases and then increases.  At the end of all the training, the error for
+    the testing set is computed.
 
  
 Figure~\ref{fig:epochs} illustrates the error on the validation set for 10
