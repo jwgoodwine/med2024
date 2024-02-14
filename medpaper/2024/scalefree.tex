@@ -1,11 +1,14 @@
 \section{APPLICATION TO SCALE FREE NETWORK WITH FRACTIONAL ORDER DYNAMICS}
 \label{sec:scalefree}
 
+In this section we use this network on a system from one of our prior
+publications. 
+
 In \cite{goodwinemed2023,goodwinemmar2023} we studied the effects of various
 parameters in large, scale free networks on the existence of fractional order
 dynamics. To further validate the generalizability of the results for the neural
-network, we apply it to a large, scale free network with fractional order
-dynamics.
+network, we apply it this network to the response of a large, scale free network
+with fractional order dynamics. 
 
 Specifically, we consider a network with 2000 nodes. Each node has a mass of 1
 and is connected to various other nodes with either a spring or damper, with
@@ -16,7 +19,7 @@ condition is computed, and the response of one of the nodes is observed. The
 network used for this validation is illustrated in Figure~\ref{fig:network} and
 the response of node 1011 when node 100 was displaced by 1 was determined by
 numerically solving the system of 4000 first order differential equations and is
-illustrated in Figure~\ref{fig:sfresp}..
+illustrated in Figure~\ref{fig:sfresp}.
 
 \begin{figure}
 \centering
@@ -40,6 +43,9 @@ fractional order ``reduced order'' model better matches the response than a
 standard second order model. Using two different optimization methods (Matlab
 \texttt{patternsearch} (deterministic) and \texttt{particleswarm} (stochastic))
 the best fit of a fractional order unit step response and second order step
-response were determined. Again the match is excellent.  The predicted order by
-the neural network was 1.782. The predicted order by the two optimization
-methods was 1.784, showing nearly exact agreement.
+response were determined. 
+
+We then compare the order determined by the optimization method, which is very
+slow, to the order predicted by the neural network, which is very fast.  The
+predicted order by the neural network was 1.782. The predicted order by the two
+optimization methods was 1.784, showing nearly exact agreement.

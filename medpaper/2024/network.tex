@@ -1,6 +1,8 @@
 \section{NEURAL NETWORK, TRAINING DATA SET, AND TRAINING}
 \label{sec:network}
 
+\subsection{Structure of the Feedforward Neural Network}
+
   The neural network used in this paper is illustrated in
   Figure~\ref{fig:thennet}. There is an input layer with 101 nodes, a hidden
   layer with 64 nodes, a subsequent hidden layer with 16 nodes, another hidden
@@ -10,7 +12,7 @@
   discretized into time steps of $\Delta t = 0.1$ [s], which gives 101 input
   nodes. The single output of the network is the order of the system that
   produced the input step response. There are approximately 7600 parameters in
-  the feedforward neural network. 
+  the feedforward neural network that are adaptable for training. 
 
   The network was implemented in python using the \texttt{torch} library and
   \texttt{pytorch\_lightning} tools. This network is not trained as a pure
@@ -18,8 +20,8 @@
   systems to fractional orders between them, so the loss function is the mean
   squared error function, \texttt{mse\_loss()}, and the optimization method
   adopted was Adam optimizer, \texttt{torch.optim.Adam()} with a learning rate
-  of $0.001$. A branch of our github repository that should repeatably replicate
-  the results presented in this paper is at
+  of $0.001$. A branch of our github repository that has fixed random seeds that
+  should repeatably replicate the results presented in this paper is at
   \cite{Goodwine_Integer_trained_neural}.
 
 \subsection{Integer Order Training, Validation and Testing Data}
@@ -70,11 +72,11 @@
     training set of that size corresponds to approximately 8 training points for
     each parameter in the network. For training, the training set is shuffled at
     the beginning of each epoch and the optimization method is applied to change
-    the weights in the network.  At the end of the epoch, the network is run on
-    the validation set to compute an error for data points the network was not
-    trained on. Evidence of over training would be if the validation set error
-    decreases and then increases.  At the end of all the training, the error for
-    the testing set is computed.
+    the parameters in the network.  At the end of the epoch, the network is run
+    on the validation set to compute an error for data points the network was
+    not trained on. Evidence of over training would be if the validation set
+    error decreases and then increases.  At the end of all the training, the
+    error for the testing set is computed.
 
  
 Figure~\ref{fig:epochs} illustrates the error on the validation set for 10

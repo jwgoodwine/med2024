@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Homebrew) (preloaded format=pdflatex 2023.6.22)  14 FEB 2024 15:11
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Homebrew) (preloaded format=pdflatex 2023.6.22)  14 FEB 2024 16:30
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -653,7 +653,7 @@ Overfull \hbox (7.22688pt too wide) in paragraph at lines 5--6
  []
 
 
-Underfull \vbox (badness 2426) has occurred while \output is active []
+Underfull \vbox (badness 6300) has occurred while \output is active []
 
  [1{/opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/map/pdftex/u
 pdmap/pdftex.map}{/opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/font
@@ -671,64 +671,65 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 /lm-mathit.enc}{/opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/
 enc/dvips/lm/lm-mathsy.enc}{/opt/homebrew/Cellar/texlive/20230313_2/share/texmf
 -dist/fonts/enc/dvips/lm/lm-mathex.enc}]) (./network.tex
-Underfull \hbox (badness 6125) in paragraph at lines 56--61
+Underfull \hbox (badness 6125) in paragraph at lines 58--63
 []\OT1/lmr/m/n/10 The unit step re-sponse from 0 to 10 sec-
  []
 
-(./overtrain.pgf)) (./generalize.tex [3]
-Underfull \hbox (badness 5787) in paragraph at lines 31--33
+[3] (./overtrain.pgf)) (./generalize.tex
+Underfull \hbox (badness 5787) in paragraph at lines 32--34
 \OT1/lmr/m/n/10 tion 3[] us-ing the \OT1/lmtt/m/n/10 FODE() \OT1/lmr/m/n/10 fun
 c-tion from the
  []
 
 (./fracsteps.pgf)
-Overfull \hbox (7.22688pt too wide) in paragraph at lines 8781--40
+Overfull \hbox (7.22688pt too wide) in paragraph at lines 8781--41
  [][] 
  []
 
 (./predicted.pgf)
-Overfull \hbox (7.22688pt too wide) in paragraph at lines 4510--59
+Overfull \hbox (7.22688pt too wide) in paragraph at lines 4510--60
  [][] 
  []
 
-) (./scalefree.tex
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [4]
+) (./scalefree.tex [4]
 Package epstopdf Info: Source file: <network.eps>
-(epstopdf)                    date: 2024-02-12 14:26:12
+(epstopdf)                    date: 2024-02-14 15:23:02
 (epstopdf)                    size: 324686 bytes
 (epstopdf)             Output file: <network-eps-converted-to.pdf>
-(epstopdf)                    date: 2024-02-12 14:28:43
+(epstopdf)                    date: 2024-02-14 15:23:02
 (epstopdf)                    size: 393228 bytes
 (epstopdf)             Command: <repstopdf --outfile=network-eps-converted-to.p
 df network.eps>
-(epstopdf)             \includegraphics on input line 23.
+(epstopdf)             \includegraphics on input line 26.
 Package epstopdf Info: Output file is already uptodate.
 <network-eps-converted-to.pdf, id=39, 562.1pt x 421.575pt>
 File: network-eps-converted-to.pdf Graphic file (type pdf)
 <use network-eps-converted-to.pdf>
-Package pdftex.def Info: network-eps-converted-to.pdf  used on input line 23.
+Package pdftex.def Info: network-eps-converted-to.pdf  used on input line 26.
 (pdftex.def)             Requested size: 252.94499pt x 189.70699pt.
 
-Overfull \hbox (7.22688pt too wide) in paragraph at lines 23--24
+Overfull \hbox (7.22688pt too wide) in paragraph at lines 26--27
  [][] 
  []
 
 (./networkresponse.pgf)
-Overfull \hbox (7.22688pt too wide) in paragraph at lines 619--32
+Overfull \hbox (7.22688pt too wide) in paragraph at lines 619--35
  [][] 
  []
 
-) (./conclusions.tex) (./main.bbl
+) (./conclusions.tex [5 <./network-eps-converted-to.pdf>] (./extrapolate.pgf)
+Overfull \hbox (7.22688pt too wide) in paragraph at lines 4510--42
+ [][] 
+ []
+
+) (./main.bbl
 LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 3
 2.
 
 (/opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/tex/latex/lm/ts1lmr.f
 d
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-) [5{/opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/enc/dvips/l
-m/lm-ts1.enc} <./network-eps-converted-to.pdf>])
+))
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -740,18 +741,17 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the US letter (8.5in X 11in) paper size.
 
-[6
-
-] (./main.aux)
+[6{/opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/enc/dvips/lm/
+lm-ts1.enc}] (./main.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 11640 strings out of 476025
- 228803 string characters out of 5779036
- 1946388 words of memory out of 5000000
- 31806 multiletter control sequences out of 15000+600000
+ 11646 strings out of 476025
+ 228905 string characters out of 5779036
+ 1942388 words of memory out of 5000000
+ 31809 multiletter control sequences out of 15000+600000
  698452 words of font info for 153 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  72i,12n,76p,445b,440s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -766,24 +766,26 @@ t/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/type1/public/lm/lmm
 i10.pfb></opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/type1/p
 ublic/lm/lmmi5.pfb></opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fo
 nts/type1/public/lm/lmmi7.pfb></opt/homebrew/Cellar/texlive/20230313_2/share/te
-xmf-dist/fonts/type1/public/lm/lmr10.pfb></opt/homebrew/Cellar/texlive/20230313
-_2/share/texmf-dist/fonts/type1/public/lm/lmr12.pfb></opt/homebrew/Cellar/texli
-ve/20230313_2/share/texmf-dist/fonts/type1/public/lm/lmr5.pfb></opt/homebrew/Ce
-llar/texlive/20230313_2/share/texmf-dist/fonts/type1/public/lm/lmr6.pfb></opt/h
-omebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/type1/public/lm/lmr7.p
-fb></opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/type1/public
-/lm/lmr8.pfb></opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/ty
-pe1/public/lm/lmri10.pfb></opt/homebrew/Cellar/texlive/20230313_2/share/texmf-d
-ist/fonts/type1/public/lm/lmri8.pfb></opt/homebrew/Cellar/texlive/20230313_2/sh
-are/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></opt/homebrew/Cellar/texlive/2
-0230313_2/share/texmf-dist/fonts/type1/public/lm/lmsy7.pfb></opt/homebrew/Cella
-r/texlive/20230313_2/share/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></opt/ho
-mebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/type1/public/lm/lmtt9.p
-fb>
-Output written on main.pdf (6 pages, 919853 bytes).
+xmf-dist/fonts/type1/public/lm/lmmi8.pfb></opt/homebrew/Cellar/texlive/20230313
+_2/share/texmf-dist/fonts/type1/public/lm/lmr10.pfb></opt/homebrew/Cellar/texli
+ve/20230313_2/share/texmf-dist/fonts/type1/public/lm/lmr12.pfb></opt/homebrew/C
+ellar/texlive/20230313_2/share/texmf-dist/fonts/type1/public/lm/lmr5.pfb></opt/
+homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/type1/public/lm/lmr6.
+pfb></opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/type1/publi
+c/lm/lmr7.pfb></opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/t
+ype1/public/lm/lmr8.pfb></opt/homebrew/Cellar/texlive/20230313_2/share/texmf-di
+st/fonts/type1/public/lm/lmri10.pfb></opt/homebrew/Cellar/texlive/20230313_2/sh
+are/texmf-dist/fonts/type1/public/lm/lmri8.pfb></opt/homebrew/Cellar/texlive/20
+230313_2/share/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></opt/homebrew/Cella
+r/texlive/20230313_2/share/texmf-dist/fonts/type1/public/lm/lmsy7.pfb></opt/hom
+ebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/type1/public/lm/lmsy8.pf
+b></opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/type1/public/
+lm/lmtt10.pfb></opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/t
+ype1/public/lm/lmtt9.pfb>
+Output written on main.pdf (6 pages, 946009 bytes).
 PDF statistics:
- 148 PDF objects out of 1000 (max. 8388607)
- 90 compressed objects within 1 object stream
+ 158 PDF objects out of 1000 (max. 8388607)
+ 96 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  23 words of extra memory for PDF output out of 10000 (max. 10000000)
 
