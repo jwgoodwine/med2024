@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Homebrew) (preloaded format=pdflatex 2023.6.22)  14 FEB 2024 16:30
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Homebrew) (preloaded format=pdflatex 2023.6.22)  15 FEB 2024 14:04
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -539,11 +539,7 @@ File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 File: l3backend-pdftex.def 2023-01-16 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count287
 \l__pdf_internal_box=\box61
-) (./main.aux
-
-LaTeX Warning: Label `fig:accuracy' multiply defined.
-
-)
+) (./main.aux)
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 25.
@@ -742,47 +738,43 @@ Before submitting the final camera ready copy, remember to:
  process uses the US letter (8.5in X 11in) paper size.
 
 [6{/opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/enc/dvips/lm/
-lm-ts1.enc}] (./main.aux)
-
-LaTeX Warning: There were multiply-defined labels.
-
- ) 
+lm-ts1.enc}] (./main.aux) ) 
 Here is how much of TeX's memory you used:
- 11646 strings out of 476025
- 228905 string characters out of 5779036
+ 11647 strings out of 476025
+ 228916 string characters out of 5779036
  1942388 words of memory out of 5000000
- 31809 multiletter control sequences out of 15000+600000
+ 31810 multiletter control sequences out of 15000+600000
  698452 words of font info for 153 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  72i,12n,76p,445b,440s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/type1/public/
-lm/lmbx10.pfb></opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/t
-ype1/public/lm/lmbx12.pfb></opt/homebrew/Cellar/texlive/20230313_2/share/texmf-
-dist/fonts/type1/public/lm/lmbx9.pfb></opt/homebrew/Cellar/texlive/20230313_2/s
-hare/texmf-dist/fonts/type1/public/lm/lmbxi10.pfb></opt/homebrew/Cellar/texlive
-/20230313_2/share/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb></opt/homebrew/C
-ellar/texlive/20230313_2/share/texmf-dist/fonts/type1/public/lm/lmex10.pfb></op
-t/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/type1/public/lm/lmm
-i10.pfb></opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/type1/p
-ublic/lm/lmmi5.pfb></opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fo
-nts/type1/public/lm/lmmi7.pfb></opt/homebrew/Cellar/texlive/20230313_2/share/te
-xmf-dist/fonts/type1/public/lm/lmmi8.pfb></opt/homebrew/Cellar/texlive/20230313
-_2/share/texmf-dist/fonts/type1/public/lm/lmr10.pfb></opt/homebrew/Cellar/texli
-ve/20230313_2/share/texmf-dist/fonts/type1/public/lm/lmr12.pfb></opt/homebrew/C
-ellar/texlive/20230313_2/share/texmf-dist/fonts/type1/public/lm/lmr5.pfb></opt/
-homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/type1/public/lm/lmr6.
-pfb></opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/type1/publi
-c/lm/lmr7.pfb></opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/t
-ype1/public/lm/lmr8.pfb></opt/homebrew/Cellar/texlive/20230313_2/share/texmf-di
-st/fonts/type1/public/lm/lmri10.pfb></opt/homebrew/Cellar/texlive/20230313_2/sh
-are/texmf-dist/fonts/type1/public/lm/lmri8.pfb></opt/homebrew/Cellar/texlive/20
-230313_2/share/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></opt/homebrew/Cella
-r/texlive/20230313_2/share/texmf-dist/fonts/type1/public/lm/lmsy7.pfb></opt/hom
-ebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/type1/public/lm/lmsy8.pf
-b></opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/type1/public/
-lm/lmtt10.pfb></opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/t
-ype1/public/lm/lmtt9.pfb>
-Output written on main.pdf (6 pages, 946009 bytes).
+</opt/homebrew/Cellar/texlive/20230313_2/share/texmf
+-dist/fonts/type1/public/lm/lmbx10.pfb></opt/homebrew/Cellar/texlive/20230313_2
+/share/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></opt/homebrew/Cellar/texliv
+e/20230313_2/share/texmf-dist/fonts/type1/public/lm/lmbx9.pfb></opt/homebrew/Ce
+llar/texlive/20230313_2/share/texmf-dist/fonts/type1/public/lm/lmbxi10.pfb></op
+t/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/type1/public/lm/lmc
+sc10.pfb></opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/type1/
+public/lm/lmex10.pfb></opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/
+fonts/type1/public/lm/lmmi10.pfb></opt/homebrew/Cellar/texlive/20230313_2/share
+/texmf-dist/fonts/type1/public/lm/lmmi5.pfb></opt/homebrew/Cellar/texlive/20230
+313_2/share/texmf-dist/fonts/type1/public/lm/lmmi7.pfb></opt/homebrew/Cellar/te
+xlive/20230313_2/share/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></opt/homebre
+w/Cellar/texlive/20230313_2/share/texmf-dist/fonts/type1/public/lm/lmr10.pfb></
+opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/type1/public/lm/l
+mr12.pfb></opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/type1/
+public/lm/lmr5.pfb></opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fo
+nts/type1/public/lm/lmr6.pfb></opt/homebrew/Cellar/texlive/20230313_2/share/tex
+mf-dist/fonts/type1/public/lm/lmr7.pfb></opt/homebrew/Cellar/texlive/20230313_2
+/share/texmf-dist/fonts/type1/public/lm/lmr8.pfb></opt/homebrew/Cellar/texlive/
+20230313_2/share/texmf-dist/fonts/type1/public/lm/lmri10.pfb></opt/homebrew/Cel
+lar/texlive/20230313_2/share/texmf-dist/fonts/type1/public/lm/lmri8.pfb></opt/h
+omebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/type1/public/lm/lmsy10
+.pfb></opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/type1/publ
+ic/lm/lmsy7.pfb></opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts
+/type1/public/lm/lmsy8.pfb></opt/homebrew/Cellar/texlive/20230313_2/share/texmf
+-dist/fonts/type1/public/lm/lmtt10.pfb></opt/homebrew/Cellar/texlive/20230313_2
+/share/texmf-dist/fonts/type1/public/lm/lmtt9.pfb>
+Output written on main.pdf (6 pages, 946575 bytes).
 PDF statistics:
  158 PDF objects out of 1000 (max. 8388607)
  96 compressed objects within 1 object stream

@@ -12,8 +12,8 @@ While the network predicts fractional orders very well for fractional orders
 \emph{between} the trained orders of 1 and 2, it does a poor job extrapolating
 outside of the range $[1,2]$, as is illustrated in Figure~\ref{fig:extrapolate}
 where the range of fractional values was extended only by 5\% in at each end, to
-$\left[ 0.95, 2.05 \right]$. Clearly it is particularley inaccurage for orders
-above 2. In our judgement it seems that this network is exceptionally good at
+$\left[ 0.95, 2.05 \right]$. Clearly it is particularly inaccurate for orders
+above 2. In our judgment it seems that this network is exceptionally good at
 ``interpolation'' and surprisingly bad at ``extrapolation''. The reason for this
 is currently not clear and part of our current efforts. Clearly, values very far
 outside the training set will not be modeled by the network very well, but this
@@ -32,7 +32,7 @@ outside the range of $[1,2]$. With regard to the latter limitation, we have not
 yet tried the rather obvious approach of adding zeroth order step responses to
 the system, which would themselves be step functions. These would seem to lack
 diversity of dynamics to warrant having a third of the training set be them and
-careful design of the training set and approch would be needed. 
+careful design of the training set and approach would be needed. 
 
 \begin{figure}
 \centering
@@ -43,3 +43,11 @@ careful design of the training set and approch would be needed.
 \label{fig:extrapolate}
 \end{figure}
 
+This network simply identified fractional orders, albeit very accurately. A much
+more challening problem, stemming from our large scale network work, is to
+distinguish fractional order responses with second order responses with complex
+roots. In many of our networks considered in
+\cite{goodwinemed2023,goodwinemmar2023}, the difference between the accuracy of
+a fractional order model and second order model was fairly small. In such cases
+a neural network would be tasked with identifying much more subtle differences
+between integer and fractional order responses. 
