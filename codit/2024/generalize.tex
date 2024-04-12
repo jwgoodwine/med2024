@@ -68,3 +68,12 @@ derivative. The largest deviation from perfect generalization is near the two
 endpoints. A speculative, but plausable, explanation of those is that because
 those points are near the training points, the network will tend to over predict
 orders of 1 and 2.
+
+In designing the neural network, we tested the efficacy of the network on a wide
+range of configurations; specifically, with the number of nodes in the first
+hidden layer ranging from 32 to 128 and the number of nodes in the second hidden layer
+ranging from 16 to 64. We also tested ReLU and sigmoid activation functions. As
+a measure of efficacy in predicting the fractional order, the $R^2$ ranged from
+0.989 for the network configuration presented to 0.95 for sigmoid activation
+functions with the same configuration of hidden nodes to 0.92 with a higher
+number of hidden nodes. 

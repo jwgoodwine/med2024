@@ -13,15 +13,10 @@ While the network predicts fractional orders very well for fractional orders
 outside of the range $[1,2]$, as is illustrated in Figure~\ref{fig:extrapolate}
 where the range of fractional values was extended only by 5\% in at each end, to
 $\left[ 0.95, 2.05 \right]$. Clearly it is particularly inaccurate for orders
-above 2. In our judgment it seems that this network is exceptionally good at
-``interpolation'' and surprisingly bad at ``extrapolation''. The reason for this
-is currently not clear and part of our current efforts. Clearly, values very far
-outside the training set will not be modeled by the network very well, but this
-network is striking to us in this regard.  Of course, fractional order step
-responses for orders above 2 are unstable (although not growing excessively in
-the time range considered), and has a qualitative difference from the rest of
-the training data. However,  the extreme change in predicted order that is
-observed is, for us, unexpected. 
+above 2.  Other than being better at interpolation than at extrapolation, the
+reason for this is currently not clear and part of our current efforts. Clearly,
+values very far outside the training set will not be modeled by the network very
+well, but this network is striking to us in this regard.  
 
 There are several avenues for continued research. Currently the network only
 identifies first order, second order and fractional orders between one and two

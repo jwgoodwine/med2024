@@ -1,7 +1,7 @@
 \section{NEURAL NETWORK, TRAINING DATA SET, AND TRAINING}
 \label{sec:network}
 
-\subsection{Structure of the Feedforward Neural Network}
+\subsection{Selection of the Structure of the Neural Network}
 
   The neural network used in this paper is illustrated in
   Figure~\ref{fig:thennet}. There is an input layer with 101 nodes, a hidden
@@ -9,10 +9,14 @@
   layer with 16 nodes, and an output layer with 1 node. Each hidden layer has
   the ReLU activation function. The values input to the network is the unit step
   response of a linear system in the time range of $0 \leq t \leq 10$
-  discretized into time steps of $\Delta t = 0.1$ [s], which gives 101 input
-  nodes. The single output of the network is the order of the system that
-  produced the input step response. There are approximately 7600 parameters in
-  the feedforward neural network that are adaptable for training. 
+  discretized into time steps of $\Delta t = 0.1$ [s]. That value of $\Delta t$
+  was selected to give approximately 20 points in one typical period of
+  oscillation in the dataset, which then specifies the number of 101 input
+  nodes.  The selection of the activation functions and number of hidden nodes
+  and layers is presented in the next section. The single output of the network
+  is the order of the system that produced the input step response. There are
+  approximately 7600 parameters in the feedforward neural network that are
+  adaptable for training. 
 
   The network was implemented in python using the \texttt{torch} library and
   \texttt{pytorch\_lightning} tools. This network is not trained as a pure
@@ -37,21 +41,16 @@
     order system, and if not, then it will be for a first order system.
 
     \item Select two numbers, $c_1$ and $c_2$ from a uniform distribution with
-    values between 0.01 and 4.
+    values between 0.01 and 4. This range was selected to give a frequency range
+    of training data between nearly zero and 400.
 
     \begin{itemize}
 
       \item If the response is for a first order system, then the transfer
-      function is
-      \[
-        G(s) = \frac{c_2}{c_1 s + c_2}.
-      \]
-
+      function is $G(s) = \frac{c_2}{c_1 s + c_2}.$
       \item If the response is for a second order system, then the selected
       transfer function is
-      \[
-        G(s) = \frac{c_2}{c_1 s^2 + c_2}.
-      \]
+      $G(s) = \frac{c_2}{c_1 s^2 + c_2}.$
 
     \end{itemize}
 
@@ -83,10 +82,7 @@ Figure~\ref{fig:epochs} illustrates the error on the validation set for 10
 training runs for the network versus epoch. It appears that if the validation
 error increases, it tends to start to do so around 1000 epochs; otherwise it
 tends to stop changing around 1000 epochs (there seems to be one exception). As
-such, we will fix the number of training epochs at 1000.  Additionally, various
-alternative configurations to the network described above, including more hidden
-nodes and different activation functions were investigated, and the
-configuration presented above generally gave the best results. 
+such, we will fix the number of training epochs at 1000.  
 
 \begin{figure}
 \centering

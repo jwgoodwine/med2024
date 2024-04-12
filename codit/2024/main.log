@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Homebrew) (preloaded format=pdflatex 2023.6.22)  15 FEB 2024 14:51
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Homebrew) (preloaded format=pdflatex 2023.6.22)  12 APR 2024 19:48
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -649,7 +649,7 @@ Overfull \hbox (7.22688pt too wide) in paragraph at lines 5--6
  []
 
 
-Underfull \vbox (badness 6300) has occurred while \output is active []
+Underfull \vbox (badness 2426) has occurred while \output is active []
 
  [1{/opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/map/pdftex/u
 pdmap/pdftex.map}{/opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/font
@@ -667,11 +667,11 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 /lm-mathit.enc}{/opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/
 enc/dvips/lm/lm-mathsy.enc}{/opt/homebrew/Cellar/texlive/20230313_2/share/texmf
 -dist/fonts/enc/dvips/lm/lm-mathex.enc}]) (./network.tex
-Underfull \hbox (badness 6125) in paragraph at lines 58--63
+Underfull \hbox (badness 6125) in paragraph at lines 57--62
 []\OT1/lmr/m/n/10 The unit step re-sponse from 0 to 10 sec-
  []
 
-[3] (./overtrain.pgf)) (./generalize.tex
+(./overtrain.pgf)) (./generalize.tex [3]
 Underfull \hbox (badness 5787) in paragraph at lines 32--34
 \OT1/lmr/m/n/10 tion 3[] us-ing the \OT1/lmtt/m/n/10 FODE() \OT1/lmr/m/n/10 fun
 c-tion from the
@@ -687,7 +687,7 @@ Overfull \hbox (7.22688pt too wide) in paragraph at lines 4510--60
  [][] 
  []
 
-) (./scalefree.tex [4]
+[4]) (./scalefree.tex
 Package epstopdf Info: Source file: <network.eps>
 (epstopdf)                    date: 2024-02-14 15:23:02
 (epstopdf)                    size: 324686 bytes
@@ -696,25 +696,25 @@ Package epstopdf Info: Source file: <network.eps>
 (epstopdf)                    size: 393228 bytes
 (epstopdf)             Command: <repstopdf --outfile=network-eps-converted-to.p
 df network.eps>
-(epstopdf)             \includegraphics on input line 26.
+(epstopdf)             \includegraphics on input line 25.
 Package epstopdf Info: Output file is already uptodate.
 <network-eps-converted-to.pdf, id=39, 562.1pt x 421.575pt>
 File: network-eps-converted-to.pdf Graphic file (type pdf)
 <use network-eps-converted-to.pdf>
-Package pdftex.def Info: network-eps-converted-to.pdf  used on input line 26.
+Package pdftex.def Info: network-eps-converted-to.pdf  used on input line 25.
 (pdftex.def)             Requested size: 252.94499pt x 189.70699pt.
 
-Overfull \hbox (7.22688pt too wide) in paragraph at lines 26--27
+Overfull \hbox (7.22688pt too wide) in paragraph at lines 25--26
  [][] 
  []
 
 (./networkresponse.pgf)
-Overfull \hbox (7.22688pt too wide) in paragraph at lines 619--35
+Overfull \hbox (7.22688pt too wide) in paragraph at lines 619--34
  [][] 
  []
 
 ) (./conclusions.tex [5 <./network-eps-converted-to.pdf>] (./extrapolate.pgf)
-Overfull \hbox (7.22688pt too wide) in paragraph at lines 4510--42
+Overfull \hbox (7.22688pt too wide) in paragraph at lines 4510--37
  [][] 
  []
 
@@ -742,7 +742,7 @@ lm-ts1.enc}] (./main.aux) )
 Here is how much of TeX's memory you used:
  11647 strings out of 476025
  228916 string characters out of 5779036
- 1942388 words of memory out of 5000000
+ 1945388 words of memory out of 5000000
  31810 multiletter control sequences out of 15000+600000
  698452 words of font info for 153 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -774,7 +774,7 @@ ic/lm/lmsy7.pfb></opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts
 /type1/public/lm/lmsy8.pfb></opt/homebrew/Cellar/texlive/20230313_2/share/texmf
 -dist/fonts/type1/public/lm/lmtt10.pfb></opt/homebrew/Cellar/texlive/20230313_2
 /share/texmf-dist/fonts/type1/public/lm/lmtt9.pfb>
-Output written on main.pdf (6 pages, 946591 bytes).
+Output written on main.pdf (6 pages, 962463 bytes).
 PDF statistics:
  158 PDF objects out of 1000 (max. 8388607)
  96 compressed objects within 1 object stream

@@ -131,15 +131,19 @@ class SimpleModel(LightningModule):
         # Define PyTorch model
         classes=1
         features=101
+        first = 32
+        second = 16 
         self.model = nn.Sequential(
             nn.Flatten(),
-            nn.Linear(features, 64),
+            nn.Linear(features, first),
             nn.ReLU(),
+            #nn.Sigmoid(),
             #nn.Dropout(0.1),
-            nn.Linear(64, 16),
+            nn.Linear(first, second),
             nn.ReLU(),
+            #nn.Sigmoid(),
             #nn.Dropout(0.1),
-            nn.Linear(16, classes),
+            nn.Linear(second, classes),
         )
 
     def forward(self, x):
@@ -278,5 +282,5 @@ plt.plot(predictions[:,0],linpredict,color="k")
 plt.xlabel("Input order, $\\alpha$")
 plt.ylabel("Predicted order")
 plt.tight_layout()
-plt.savefig("extrapolate.pgf",format="pgf")
+#plt.savefig("extrapolate.pgf",format="pgf")
 
